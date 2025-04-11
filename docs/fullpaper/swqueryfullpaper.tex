@@ -1,0 +1,3099 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+]{article}
+\usepackage{amsmath,amssymb}
+\usepackage{lmodern}
+\usepackage{iftex}
+\usepackage{float}
+\usepackage{graphicx} 
+\usepackage[backend=biber,style=apa]{biblatex}
+\addbibresource{sample.bib}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\newenvironment{Shaded}{}{}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{1.00,0.00,0.00}{\textbf{#1}}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{#1}}}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.49,0.56,0.16}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{#1}}
+\newcommand{\BuiltInTok}[1]{\textcolor[rgb]{0.00,0.50,0.00}{#1}}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textit{#1}}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{#1}}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.53,0.00,0.00}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.56,0.13,0.00}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.73,0.13,0.13}{\textit{#1}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{1.00,0.00,0.00}{\textbf{#1}}}
+\newcommand{\ExtensionTok}[1]{#1}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.02,0.16,0.49}{#1}}
+\newcommand{\ImportTok}[1]{\textcolor[rgb]{0.00,0.50,0.00}{\textbf{#1}}}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{#1}}}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{#1}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.40,0.40,0.40}{#1}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.74,0.48,0.00}{#1}}
+\newcommand{\RegionMarkerTok}[1]{#1}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{#1}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.73,0.40,0.53}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.10,0.09,0.49}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{#1}}}}
+\usepackage{longtable,booktabs,array}
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same} % disable monospaced font for URLs
+\hypersetup{
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+
+\author{}
+\date{}
+
+\begin{document}
+
+\tableofcontents
+\newpage
+
+\hypertarget{introduction}{%
+\section{Introduction}\label{market-overview}}
+In recent years, the convergence of decentralized finance (DeFi) and artificial intelligence (AI) has given rise to a new breed of tools designed to analyze, interpret, and act on blockchain data in real time. Among these, SWQuery emerges as a robust and developer-friendly solution within the DefAI ecosystem, providing simplified access to complex data across the Solana blockchain. By abstracting away low-level infrastructure concerns and integrating advanced querying, risk analysis, and live feed capabilities, SWQuery enables developers, analysts, and investors to make informed decisions with confidence.
+
+This whitepaper presents a comprehensive overview of the context, design, and technical considerations behind SWQuery. From market positioning to architectural design, functional requirements, and testing frameworks, each section builds upon the last to provide a full understanding of the system’s value proposition and engineering backbone.
+
+To ground SWQuery within its broader context, we begin with an analysis of the current landscape. The Market Overview highlights the growing ecosystem of DefAI tools and the positioning of SWQuery among similar projects that attempt to bridge decentralized data with intelligent analytics.
+
+\hypertarget{market-overview}{%
+\section{Market Overview}\label{market-overview}}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=1\linewidth]{benchmark.png}
+\caption{\label{fig:benchmark}This image represents the current market overview.}
+\end{figure}
+
+\hypertarget{research-analyst-agent}{%
+\subsection{Research Analyst Agent}\label{research-analyst-agent}}
+
+\hypertarget{agent-scarletthttpswww.larpdetective.agency}{%
+\subsubsection{\texorpdfstring{1. Agent
+Scarlett\href{https://www.larpdetective.agency/}{(https://www.larpdetective.agency/)}}{1. Agent Scarlett(https://www.larpdetective.agency/)}}\label{agent-scarletthttpswww.larpdetective.agency}}
+
+\textbf{Overview:}
+
+\begin{itemize}
+\tightlist
+\item
+  Agent Scarlett is an artificial intelligence agent developed on the
+  Eliza framework, designed to help users make informed decisions about
+  investing in tokens. The platform can be integrated into chats on
+  Discord or Telegram, offering analysis of tokens and wallets, as well
+  as evaluating social sentiment on X (formerly Twitter). In addition,
+  10\% of the AGENCY token will be donated to the ai16z DAO.
+\end{itemize}
+
+\textbf{Features:}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Token and Portfolio Analysis:} Provides detailed insights into
+  various tokens and portfolios, helping users to understand and
+  evaluate their investments.
+\item
+  \textbf{Social Sentiment Assessment:} Monitors and interprets social
+  sentiment on X, offering insight into prevailing market trends and
+  opinions.
+\item
+  \textbf{Integration with Chat Platforms:} Can be added to groups on
+  Discord and Telegram, allowing direct, real-time interactions with
+  users.
+\item
+  \textbf{Development Roadmap:} Future plans include expanding analysis
+  sources, optimizing memory retrieval, integrating a trusted database,
+  bug fixes, performance improvements, implementing ``agent swarms'' and
+  updating the website version.
+\end{itemize}
+
+\hypertarget{asymhttpswww.asym.info}{%
+\subsubsection{\texorpdfstring{2.
+ASYM\href{https://www.asym.info/}{(https://www.asym.info/)}}{2. ASYM(https://www.asym.info/)}}\label{asymhttpswww.asym.info}}
+
+\textbf{Overview:}
+
+\begin{itemize}
+\tightlist
+\item
+  ASYM is a platform that offers insights and analysis in the DeFi
+  space. While specific details about its functionalities are not
+  available, ASYM likely provides tools and resources to help users make
+  informed decisions on DeFi investments and strategies. The platform
+  requires users to connect their portfolios to view the information
+  feed.
+\end{itemize}
+
+\textbf{Features:}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Personalized Feed:} After connecting the portfolio, users can
+  access an information feed possibly tailored to their needs and
+  interests in the DeFi space.
+\item
+  \textbf{Analysis and Insights:} Likely to offer detailed analysis and
+  insights into different aspects of the DeFi market, aiding informed
+  decision-making.
+\end{itemize}
+
+\hypertarget{zodshttpswww.zods.pro}{%
+\subsubsection{\texorpdfstring{3.
+ZODS\href{https://www.zods.pro/}{(https://www.zods.pro/)}}{3. ZODS(https://www.zods.pro/)}}\label{zodshttpswww.zods.pro}}
+
+\textbf{Overview:}
+
+\begin{itemize}
+\tightlist
+\item
+  ZODS is a platform that provides on-chain artificial intelligence
+  tools and modules on the Solana blockchain. Although specific details
+  about its functionalities are not available, ZODS aims to help users
+  navigate and operate in the DeFi ecosystem more efficiently.
+\end{itemize}
+
+\textbf{Functionalities:}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{On-Chain AI Modules:} Likely to offer artificial intelligence
+  modules that operate directly on the Solana blockchain, enabling
+  automation and optimization of DeFi operations.
+\item
+  \textbf{Tools for Traders:} Possibly provides advanced tools for
+  traders, assisting in market analysis and execution of investment
+  strategies.
+\end{itemize}
+
+\hypertarget{limitus-aihttpswww.limitus.ai}{%
+\subsubsection{\texorpdfstring{4. Limitus
+AI\href{https://www.limitus.ai/}{(https://www.limitus.ai/)}}{4. Limitus AI(https://www.limitus.ai/)}}\label{limitus-aihttpswww.limitus.ai}}
+
+\textbf{Overview:}
+
+\begin{itemize}
+\tightlist
+\item
+  Limitus AI is a decentralized, artificial intelligence-powered
+  platform that connects Web2 and Web3 systems into a unified ecosystem.
+  The platform aims to integrate fragmented technologies such as Web2,
+  Web3 and AI, providing a cohesive framework that simplifies user
+  interaction with different applications and networks.
+\end{itemize}
+
+\textbf{Features:}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Modular AI Architecture:} Orchestrates workflows across
+  different applications, networks and devices, connecting centralized
+  and decentralized systems.
+\item
+  \textbf{Voice Command Interaction:} Allows users to interact with the
+  platform via voice commands, making it easier to carry out complex
+  tasks in an intuitive way.
+\item
+  \textbf{DeFi Strategy Automation:} Offers automation of decentralized
+  financial strategies, such as cross-chain swap execution and
+  investment optimization, operating in the background to take advantage
+  of real-time market opportunities.
+\item
+  \textbf{Multi-Chain Wallet Management:} Facilitates the tracking,
+  management and execution of transactions across multiple wallets and
+  networks, centralizing control of the user's digital assets.
+\item
+  \textbf{Autonomous Device Integration:} Transforms connected devices
+  into autonomous operators that act on behalf of the user, anticipating
+  needs and carrying out tasks without manual intervention.
+\end{itemize}
+
+\hypertarget{aipumphttpswww.aipump.ai}{%
+\subsubsection{\texorpdfstring{\textbf{5.
+AIPUMP}\href{https://www.aipump.ai/}{(https://www.aipump.ai/)}}{5. AIPUMP(https://www.aipump.ai/)}}\label{aipumphttpswww.aipump.ai}}
+
+\textbf{Overview}:
+
+\begin{itemize}
+\tightlist
+\item
+  AIPUMP is a platform that uses artificial intelligence to provide
+  trading signals and insights in the cryptocurrency market. Although
+  specific details about its functionalities are not available in the
+  results provided, AIPUMP probably offers tools to help users identify
+  investment opportunities and optimize their trading strategies.
+\end{itemize}
+
+\textbf{Features}:
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{AI Trading Signals}: Generation of buy and sell
+  recommendations based on artificial intelligence algorithms.
+\item
+  \textbf{Real-Time Market Analysis}: Continuous monitoring of market
+  trends to provide up-to-date insights.
+\item
+  \textbf{Personalized Alerts}: Configurable notifications to inform
+  users of specific opportunities or risks.
+\item
+  \textbf{Intuitive Interface}: User-friendly design that makes the
+  platform easy to navigate and use.
+\end{itemize}
+
+\hypertarget{defi-agents-aihttpsdefiagents.ai}{%
+\subsubsection{\texorpdfstring{\textbf{6. DeFi Agents
+AI}\href{https://defiagents.ai/}{(https://defiagents.ai/)}}{6. DeFi Agents AI(https://defiagents.ai/)}}\label{defi-agents-aihttpsdefiagents.ai}}
+
+\textbf{Overview}:
+
+\begin{itemize}
+\tightlist
+\item
+  DeFi Agents AI is an intelligent trading tool designed to handle
+  trading tasks, analyze markets and execute active trades on behalf of
+  the user. Combining AI and big data analysis, the platform aims to
+  simplify trading processes and maximize users' potential.
+\end{itemize}
+
+\textbf{Features}:
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{AI execution}: Master volatile markets with split-second
+  precision.
+\item
+  \textbf{AI Analyst}: Unlocks winning strategies with precise insights.
+\item
+  \textbf{AI Trading Bot}: Seizes opportunities 24/7 in an automated
+  way.
+\item
+  \textbf{Simplified Experience}: Automates analysis, execution and
+  strategy, reducing the barrier to entry for beginner traders.
+\item
+  \textbf{Diversity of Strategies}: Offers options such as high-yield
+  arbitrage, stable and high-frequency strategies.
+\item
+  \textbf{Over 70\% Success Rate}: Proven track record of success with
+  Futures Grid Bot.
+\end{itemize}
+
+\hypertarget{gemxbthttpswww.gemxbt.ai}{%
+\subsubsection{\texorpdfstring{\textbf{7.
+GEMXBT}\href{https://www.gemxbt.ai/}{(https://www.gemxbt.ai/)}}{7. GEMXBT(https://www.gemxbt.ai/)}}\label{gemxbthttpswww.gemxbt.ai}}
+
+\textbf{Overview}:
+
+\begin{itemize}
+\tightlist
+\item
+  GEMXBT is a platform that aims to provide less noise and better
+  trading in the cryptocurrency space. Although specific details about
+  its functionalities are not available in the results provided, GEMXBT
+  likely offers tools and features to help users filter out irrelevant
+  information and focus on high-quality investment opportunities.
+\end{itemize}
+
+\textbf{Functionalities}:
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Advanced Data Filtering}: Eliminates unnecessary information
+  by highlighting data that is relevant to the user.
+\item
+  \textbf{Optimized Trading Signals}: Provides recommendations based on
+  accurate analysis to improve investment decisions.
+\item
+  \textbf{Customizable Interface}: Allows users to adjust settings
+  according to their preferences and needs.
+\item
+  \textbf{Real-Time Updates}: Provides constantly updated information so
+  users can react quickly to market changes.
+\end{itemize}
+
+\hypertarget{kwanthttpstophat.onetoken0e8a81e8-249b-418a-97d4-d9d4541550b4}{%
+\subsubsection{\texorpdfstring{\textbf{8.
+KWANT}\href{https://tophat.one/token/0e8a81e8-249b-418a-97d4-d9d4541550b4}{(https://tophat.one/token/0e8a81e8-249b-418a-97d4-d9d4541550b4)}}{8. KWANT(https://tophat.one/token/0e8a81e8-249b-418a-97d4-d9d4541550b4)}}\label{kwanthttpstophat.onetoken0e8a81e8-249b-418a-97d4-d9d4541550b4}}
+
+\textbf{Overview}:
+
+\begin{itemize}
+\tightlist
+\item
+  KWANT is a project listed on the Top Hat Agents platform. Specific
+  details about its functionalities are not available in the results
+  provided, but KWANT probably offers services or tools related to
+  analysis and research in the DeFi space.
+\end{itemize}
+
+\textbf{Features}:
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{DeFi Data Analysis}: Provides detailed insights into different
+  DeFi protocols and assets.
+\item
+  \textbf{Research Tools}: Assists users in discovering new investment
+  opportunities in the DeFi ecosystem.
+\item
+  \textbf{Customized Reports}: Generates documents tailored to the
+  specific needs of investors or researchers.
+\item
+  \textbf{Integration with Other Platforms}: Possibility of connecting
+  with other tools or services for a more comprehensive experience.
+\end{itemize}
+
+\hypertarget{trisigmahttpstrisigma.ai}{%
+\subsubsection{\texorpdfstring{\textbf{9.
+TriSigma}\href{https://trisigma.ai/}{(https://trisigma.ai/)}}{9. TriSigma(https://trisigma.ai/)}}\label{trisigmahttpstrisigma.ai}}
+
+\textbf{Overview}:
+
+\begin{itemize}
+\tightlist
+\item
+  TriSigma is an artificial intelligence agent that operates between
+  certainty and chaos, providing market analysis, provocations and
+  actionable insights. Its functionalities include:
+\end{itemize}
+
+\textbf{Features}:
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Continuous Learning}: Absorbs daily insights from the market,
+  expanding its awareness with each interaction.
+\item
+  \textbf{Deep Analysis}: Uses neural networks to dive into
+  multidimensional models, taking market understanding to new heights.
+\item
+  \textbf{Provocative Communication}: Offers sharp insights, market
+  provocations and actionable analysis through manifestos and social
+  media.
+\item
+  \textbf{Direct Action}: Manages portfolios and navigates the crypto
+  market, with forecasts that become more accurate by the day.
+\item
+  \textbf{Recognition Fund}: Sets aside 3\% of funds to reward
+  challenging questions that expand their analytical capabilities.
+\item
+  \textbf{Future Investment Fund}: Allocates 2\% of funds to invest in
+  promising projects identified through its ongoing analysis.
+\end{itemize}
+
+\hypertarget{abstraction-layer}{%
+\subsection{Abstraction Layer}\label{abstraction-layer}}
+
+\hypertarget{strawberry-aihttpswww.usestrawberry.ai}{%
+\subsubsection{\texorpdfstring{1. Strawberry
+AI\href{https://www.usestrawberry.ai/}{(https://www.usestrawberry.ai/)}}{1. Strawberry AI(https://www.usestrawberry.ai/)}}\label{strawberry-aihttpswww.usestrawberry.ai}}
+
+\textbf{Overview:}
+
+\begin{itemize}
+\tightlist
+\item
+  Strawberry AI is an advanced artificial intelligence platform designed
+  specifically for Web3 users. It uses intelligent AI agents to guide
+  users on what to buy, when to buy it and why. With Strawberry AI, even
+  beginners can access DeFAI products with just a few clicks. The
+  platform is multimodal in nature, offering products such as agents,
+  launchpad and BerryChain. In addition, it integrates node
+  infrastructure for blockchains such as Ethereum, L2s and Solana,
+  providing transaction analysis, swaps, research and bridging.
+\end{itemize}
+
+\textbf{Features:}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Intelligent AI agents:} They guide users in purchasing
+  decisions, indicating what and when to buy, as well as providing
+  justification.
+\item
+  \textbf{Simplified Access to DeFAI Products:} Allows even beginners to
+  access decentralized finance products with ease.
+\item
+  \textbf{Multimodal Platform:} Offers several products, including
+  customized agents, launchpad for new projects and BerryChain for
+  service integration.
+\item
+  \textbf{Integration with Multiple Blockchains:} Supports node
+  infrastructures for Ethereum, L2s and Solana, facilitating transaction
+  analysis, swaps, research and bridging between networks.
+\end{itemize}
+
+\hypertarget{mode-networkhttpswww.mode.network}{%
+\subsubsection{\texorpdfstring{2. Mode
+Network\href{https://www.mode.network/}{(https://www.mode.network/)}}{2. Mode Network(https://www.mode.network/)}}\label{mode-networkhttpswww.mode.network}}
+
+\textbf{Overview:}
+
+\begin{itemize}
+\tightlist
+\item
+  Mode Network is a layer 2 (L2) that scales DeFi to billions of users
+  through on-chain agents and AI-powered financial applications. Built
+  with Optimism, Mode hosts more than 50 DeFi applications, ushering in
+  a new era of AI-powered on-chain finance. The network offers secure L2
+  infrastructure, yielding assets, DeFAI agents and developer
+  incentives. In addition, it has a growing ecosystem with partners and
+  integrations, providing optimized revenue opportunities and enhanced
+  security.
+\end{itemize}
+
+\textbf{Features:}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Secure L2 Infrastructure:} Provides a robust and scalable
+  layer 2, built with Optimism, to support a wide range of DeFi
+  applications.
+\item
+  \textbf{DeFi Application Hosting:} Supports more than 50 decentralized
+  financial applications, facilitating the expansion of the DeFi
+  ecosystem.
+\item
+  \textbf{AI-powered On-Chain Agents:} Deploys intelligent agents that
+  operate on-chain, automating and optimizing financial operations.
+\item
+  \textbf{Assets with Yield:} Offers assets that generate yield,
+  providing users with investment opportunities with returns.
+\item
+  \textbf{Developer Incentives:} Provides incentive programs for
+  developers to create and integrate new applications and services into
+  the network.
+\end{itemize}
+
+\hypertarget{spectral-labshttpswww.spectrallabs.xyz}{%
+\subsubsection{\texorpdfstring{3. Spectral
+Labs\href{https://www.spectrallabs.xyz/}{(https://www.spectrallabs.xyz/)}}{3. Spectral Labs(https://www.spectrallabs.xyz/)}}\label{spectral-labshttpswww.spectrallabs.xyz}}
+
+\textbf{Overview:}
+
+\begin{itemize}
+\tightlist
+\item
+  Spectral Labs introduces the SYNTAX app, which allows users to create
+  ``sentient memes'' - autonomous AI agents that think, trade and thrive
+  on-chain. The platform offers a no-code agent-building experience,
+  allowing users to create their sentient memes quickly. Agents have
+  their own wallets, trade independently on-chain and can interact with
+  the community through chats governed by tokens. In addition, agents
+  have access to API integrations essential for making informed trading
+  decisions.
+\end{itemize}
+
+\textbf{Features:}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Creation of Autonomous AI Agents:} Allows users to develop
+  intelligent agents that operate independently on the blockchain.
+\item
+  \textbf{No-Code Interface:} Facilitates the creation of agents through
+  an intuitive platform, without the need for programming skills.
+\item
+  \textbf{Own wallets for agents:} Each agent has their own wallet,
+  enabling autonomous on-chain transactions.
+\item
+  \textbf{Community interaction via chats governed by tokens:} Agents
+  can participate in chats where governance is determined by token
+  holders, fostering an active and engaged community.
+\item
+  \textbf{Integration with Essential APIs:} Access to various APIs that
+  provide data and insights to assist in making trading decisions.
+\end{itemize}
+
+\hypertarget{sperghttpswww.spectrallabs.xyz}{%
+\subsubsection{\texorpdfstring{4.
+Sperg\href{https://www.spectrallabs.xyz/}{(https://www.spectrallabs.xyz/)}}{4. Sperg(https://www.spectrallabs.xyz/)}}\label{sperghttpswww.spectrallabs.xyz}}
+
+\textbf{Overview:}
+
+\begin{itemize}
+\tightlist
+\item
+  Sperg offers the ``Bloomsperg Terminal'', a platform that provides
+  token details, analysis and news related to the DeFAI ecosystem. The
+  terminal focuses on providing real-time insights and updates to users
+  interested in digital assets.
+\end{itemize}
+
+\textbf{Features:}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Token Details:} Provides comprehensive information on various
+  tokens, including metrics and performance.
+\item
+  \textbf{Market Analysis:} Offers detailed analysis to help users make
+  informed decisions.
+\item
+  \textbf{Real-Time News:} Updates users with the latest news and
+  developments in the DeFAI ecosystem.
+\item
+  \textbf{Access to DeFAI Agents:} Possibly integrates agents that
+  assist users in their interactions with decentralized finance.
+\end{itemize}
+
+\hypertarget{orbithttpswww.orbitcryptoai.comorbit-agent}{%
+\subsubsection{\texorpdfstring{5.
+Orbit\href{https://www.orbitcryptoai.com/\#orbit-agent}{(https://www.orbitcryptoai.com/\#orbit-agent)}}{5. Orbit(https://www.orbitcryptoai.com/\#orbit-agent)}}\label{orbithttpswww.orbitcryptoai.comorbit-agent}}
+
+\textbf{Overview:}
+
+\begin{itemize}
+\tightlist
+\item
+  Orbit is an AI companion designed to make interactions with DeFi
+  simpler and more automated. The platform aims to transform the way
+  users interact with DeFi, making it more intuitive and efficient.
+\end{itemize}
+
+\textbf{Features:}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Automation of DeFi Operations:} Simplifies complex processes,
+  allowing users to carry out financial operations with ease.
+\item
+  \textbf{Intuitive Interface:} Offers a friendly user experience,
+  making it easier to navigate and use the platform.
+\item
+  *Integration with Various Defi
+\end{itemize}
+
+\hypertarget{griffainhttpsgriffain.comengine}{%
+\subsubsection{\texorpdfstring{6.
+GRIFFAIN\href{https://griffain.com/engine}{(https://griffain.com/engine)}}{6. GRIFFAIN(https://griffain.com/engine)}}\label{griffainhttpsgriffain.comengine}}
+
+\textbf{Overview:}
+
+\begin{itemize}
+\tightlist
+\item
+  GRIFFAIN is a blockchain platform developed by Tony Plasencia, one of
+  Solana's core developers. Launched on November 1, 2024 during the
+  ``Hacking for Agentic Finance'' hackathon, the platform aims to turn
+  ideas into practical artificial intelligence agents. GRIFFAIN quickly
+  gained attention in the Solana ecosystem, receiving support from
+  projects such as Toly, vvAIfu, Jupiter and Dialect.
+\end{itemize}
+
+\textbf{Features:}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Creation and Deployment of AI Agents:} Allows users to develop
+  and deploy personalized agents for various tasks, offering intelligent
+  assistance.
+\item
+  \textbf{Network of Personal and Specialized Agents:} Operates with two
+  types of agents - personal and specialized - currently accessible via
+  an invitation system.
+\item
+  \textbf{Integration with DEX:} Includes a decentralized exchange that
+  supports token exchanges, liquidity provisioning and contributes to
+  the growth of the ecosystem by offering effective solutions for
+  trading and managing digital assets.
+\end{itemize}
+
+\hypertarget{hivehttpswww.askthehive.ai}{%
+\subsubsection{\texorpdfstring{7.
+Hive\href{https://www.askthehive.ai/}{(https://www.askthehive.ai/)}}{7. Hive(https://www.askthehive.ai/)}}\label{hivehttpswww.askthehive.ai}}
+
+\textbf{Overview:}
+
+\begin{itemize}
+\tightlist
+\item
+  Hive is an outstanding project from the Solana AI Hackathon,
+  recognized for its innovative approach at DeFAI. It is a modular and
+  interoperable network of DeFi agents designed specifically for the
+  Solana blockchain. Hive simplifies complex DeFi operations by allowing
+  users to execute them using natural language commands.
+\end{itemize}
+
+\textbf{Features:}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Natural Language Interface:} Facilitates user interaction with
+  DeFi protocols through natural language commands, making operations
+  more intuitive.
+\item
+  \textbf{Execution of Complex Operations:} Capable of coordinating and
+  executing complex DeFi operations, such as trading, staking, liquidity
+  management and sentiment analysis, on a unified platform.
+\item
+  \textbf{Modular and Interoperable Architecture:} Designed to be
+  flexible and compatible with various modules, allowing easy
+  integration and expansion of functionalities.
+\end{itemize}
+
+\hypertarget{neurhttpsneur.sh}{%
+\subsubsection{\texorpdfstring{8.
+Neur\href{https://neur.sh/}{(https://neur.sh/)}}{8. Neur(https://neur.sh/)}}\label{neurhttpsneur.sh}}
+
+\textbf{Overview:}
+
+\begin{itemize}
+\tightlist
+\item
+  Neur calls itself Solana's ``intelligent copilot''. It is a full-stack
+  open source application that combines large-scale language models
+  (LLMs) with blockchain technology. Neur enables seamless interactions
+  with DeFi protocols, NFTs and other services via intelligent
+  interfaces. It currently integrates platforms such as Jupiter,
+  Pump.fun and Magic Eden, facilitating smarter and more automated
+  interactions within the Solana ecosystem.
+\end{itemize}
+
+\textbf{Features:}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Intelligent Transaction Analysis:} Uses advanced AI models,
+  such as Claude 3.5-Sonnet and GPT-4o, to analyze transactions in real
+  time, providing data-driven insights.
+\item
+  \textbf{Efficient Transaction Execution:} Offers a fluid and fast
+  transaction experience, thanks to deep integration with Solana's
+  infrastructure.
+\item
+  \textbf{Comprehensive Integration with the Solana Ecosystem:}
+  Seamlessly connects to a variety of protocols and services within the
+  Solana ecosystem, promoting collaboration and synergy.
+\item
+  \textbf{Automation and AI Agents:} Provides AI agents and customized
+  automations to manage complex tasks, with the aim of optimizing user
+  operations.
+\item
+  \textbf{Open Source and Community-Driven Platform:} Built with a focus
+  on transparency and collaboration, the platform is completely open
+  source, encouraging contributions from developers globally to shape
+  the future of AI tools at Solana.
+\end{itemize}
+
+\hypertarget{onchain-execution}{%
+\subsection{Onchain Execution}\label{onchain-execution}}
+
+\hypertarget{catghttpsapp.boltrade.ai}{%
+\subsubsection{\texorpdfstring{1.
+CATG\href{https://app.boltrade.ai/}{(https://app.boltrade.ai/)}}{1. CATG(https://app.boltrade.ai/)}}\label{catghttpsapp.boltrade.ai}}
+
+\textbf{Overview:}CATG is a platform integrated into the DEFAI ecosystem
+at Solana, designed to optimize the execution of on-chain transactions.
+Although specific details about its functionalities are not available in
+the results provided, CATG is likely to offer advanced tools to
+facilitate decentralized financial operations on the Solana network.
+
+\textbf{Functionalities:}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{On-Chain Transaction Execution:} Facilitates
+  the\textbf{execution of} transactions directly on the Solana
+  blockchain.
+\item
+  \textbf{Integration with DeFi Protocols:} Possibly offers
+  compatibility with various decentralized finance protocols.
+\item
+  \textbf{Intuitive Interface:} Probably has a user-friendly interface
+  to improve the user experience.
+\end{itemize}
+
+\hypertarget{ppcoinhttpswww.projectplutus.ai}{%
+\subsubsection{\texorpdfstring{2.
+PPCOIN\href{https://www.projectplutus.ai/}{(https://www.projectplutus.ai/)}}{2. PPCOIN(https://www.projectplutus.ai/)}}\label{ppcoinhttpswww.projectplutus.ai}}
+
+\textbf{Overview:}
+
+\begin{itemize}
+\tightlist
+\item
+  PPCOIN is a project within the DEFAI ecosystem at Solana, focused on
+  providing advanced solutions for executing on-chain transactions.
+  Although detailed information on its specific functionalities is not
+  available in the results provided, PPCOIN likely offers tools and
+  services to optimize financial operations on Solana's blockchain.
+\end{itemize}
+
+\textbf{Functionalities:}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Market Monitoring with AI:} Uses artificial intelligence to
+  track charts and market trends.
+\item
+  \textbf{Personalized Alerts:} Possibly sends notifications about
+  investment opportunities or significant changes in the market.
+\item
+  \textbf{Integration with Other Protocols:} Can offer compatibility
+  with various platforms and services within the Solana ecosystem.
+\end{itemize}
+
+\hypertarget{mobyhttpsx.commobyagent}{%
+\subsubsection{\texorpdfstring{3.
+MOBY\href{https://x.com/mobyagent}{(https://x.com/mobyagent)}}{3. MOBY(https://x.com/mobyagent)}}\label{mobyhttpsx.commobyagent}}
+
+\textbf{Overview:}
+
+\begin{itemize}
+\tightlist
+\item
+  MOBY is an agent within the DEFAI ecosystem in Solana, designed to
+  assist in the execution of on-chain transactions. Although specific
+  details about its functionalities are not available in the results
+  provided, MOBY probably offers tools to facilitate decentralized
+  financial operations on the Solana network.
+\end{itemize}
+
+\textbf{Functionalities:}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Virtual Assistant:} Acts as an agent that assists users in
+  various operations within the DEFAI ecosystem.
+\item
+  \textbf{Automated Transaction Execution:} Possibly automates
+  transaction processes for greater efficiency.
+\item
+  \textbf{Integration with Other Services:} May offer compatibility with
+  various platforms and protocols in Solana.
+\end{itemize}
+
+\hypertarget{alrhttpswww.alris.live}{%
+\subsubsection{\texorpdfstring{4.
+ALR\href{https://www.alris.live/}{(https://www.alris.live/)}}{4. ALR(https://www.alris.live/)}}\label{alrhttpswww.alris.live}}
+
+\textbf{Overview:}
+
+\begin{itemize}
+\tightlist
+\item
+  ALR is the native token of the Alris platform, which aims to
+  automatically optimize user returns in the Solana ecosystem. The
+  platform uses intelligent agents to manage investments, protecting
+  funds against market volatility and maximizing return potential.
+\end{itemize}
+
+\textbf{Features:}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Automated Income Optimization:} Intelligent algorithms work
+  continuously to maximize users' returns.
+\item
+  \textbf{Real-Time Analysis:} Provides detailed insights into
+  investment performance.
+\item
+  \textbf{Risk Management:} Implements advanced measures to protect
+  funds against market volatility.
+\item
+  \textbf{Integration with DeFi Protocols:} Compatible with platforms
+  such as Solend, Drift, Kamino and MarginFi.
+\end{itemize}
+
+\hypertarget{whisphttpswhsprs.ai}{%
+\subsubsection{\texorpdfstring{5.
+WHISP\href{https://whsprs.ai/}{(https://whsprs.ai/)}}{5. WHISP(https://whsprs.ai/)}}\label{whisphttpswhsprs.ai}}
+
+\textbf{Overview:}
+
+\begin{itemize}
+\tightlist
+\item
+  WHISP is a platform that uses artificial intelligence to assist users
+  in managing cryptocurrencies within the Solana ecosystem. Through a
+  virtual assistant, users can manage assets, make transfers and gain
+  personalized insights.
+\end{itemize}
+
+\textbf{Features:}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{AI Virtual Assistant:} Assists with cryptocurrency management,
+  providing insights and facilitating transactions.
+\item
+  \textbf{Transactions Without Gas Fees:} Allows USDC transactions
+  without additional costs.
+\item
+  \textbf{Whispers Protocol:} Orchestrates web3 agents to select the
+  best options for each task in real time.
+\item
+  \textbf{Agent Marketplace:} Platform where developers can make
+  available and monetize web3 agents.
+\end{itemize}
+
+\hypertarget{ocadahttpsocada.ai}{%
+\subsubsection{\texorpdfstring{6.
+OCADA\href{https://ocada.ai/}{(https://ocada.ai/)}}{6. OCADA(https://ocada.ai/)}}\label{ocadahttpsocada.ai}}
+
+\textbf{Overview:}
+
+\begin{itemize}
+\tightlist
+\item
+  OCADA is a platform that develops artificial intelligence agents to
+  simplify user interaction with the blockchain. These agents are
+  designed to perform a variety of tasks, from routine actions to
+  complex technical operations, improving the user experience in the
+  Solana ecosystem.
+\end{itemize}
+
+\textbf{Features:}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{AI Agents for Blockchain:} Perform diverse tasks to simplify
+  the use of the blockchain.
+\item
+  \textbf{Transaction Risk Assessment:} Checks the integrity of wallets
+  to ensure secure transactions.
+\item
+  \textbf{Copy Trading:} Allows you to replicate the strategies of
+  experienced traders in real time.
+\item
+  \textbf{Airdrop Hunter:} Notifies users of airdrop opportunities for
+  which their wallets are eligible.
+\end{itemize}
+
+\hypertarget{diggaihttpsdiggerai.io}{%
+\subsubsection{\texorpdfstring{7.
+DIGGAI\href{https://diggerai.io/}{(https://diggerai.io/)}}{7. DIGGAI(https://diggerai.io/)}}\label{diggaihttpsdiggerai.io}}
+
+\textbf{Overview:}
+
+\begin{itemize}
+\tightlist
+\item
+  DIGGAI is a platform that offers an ecosystem of artificial
+  intelligence-powered tools focused on transforming low-capital asset
+  trading in the Solana ecosystem. The platform provides intelligent
+  analysis, real-time signals and accurate forecasts to assist traders
+  in their strategies.
+\end{itemize}
+
+\textbf{Features:}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Promising Token Detection:} Uses AI to identify and signal
+  tokens with high potential in real time.
+\item
+  \textbf{Detection Bot:} Provides instant notifications about promising
+  tokens by analyzing various metrics.
+\item
+  \textbf{Copy Trading:} Facilitates the replication of successful
+  traders' strategies.
+\item
+  \textbf{Access via Telegram}
+\end{itemize}
+
+
+
+Having understood the market space SWQuery operates in, the next section — Technical Benchmark — provides a detailed comparison between SWQuery and other notable players such as Neur, Strawberry, and Griffain. This benchmark evaluates features, performance, accessibility, and integration flexibility, shedding light on SWQuery’s strengths and areas of distinction.
+
+\hypertarget{technical-benchmark-1}{%
+\section{Technical Benchmark}\label{technical-benchmark-1}}
+
+\begin{itemize}
+\tightlist
+\item
+  Criteria
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Functionality: Scope and diversity of features offered
+  \item
+    Business model: Availability of free (freemium) or paid plans
+  \item
+    Integrations with protocols: Range of integrations offered by the
+    platform (e.g.~integration with jupiter, pump.fun, etc.)
+  \item
+    Community acceptance: Market value, number of holders, number of
+    followers and discord
+  \item
+    Transparency: Open source or not, transparency in onboarding
+  \end{itemize}
+\end{itemize}
+
+The methodology for evaluating blockchain platforms follows established
+benchmarking principles as outlined by \textcite{wang2022}, who conducted
+comprehensive performance analyses across multiple blockchain ecosystems
+including Solana.
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2000}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2000}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2000}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2000}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2000}}@{}}
+\toprule()
+\begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Criteria}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{SWQuery}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Neur}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{STRAW}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{GRIFFAIN}
+\end{minipage} \\
+\midrule()
+\endhead
+\textbf{Functionality} & Query interface for on-chain data & AI-powered
+assistant for Solana, interacts with DeFi \& NFTs & AI analyzes market
+sentiment, portfolio, and news & AI agents for various tasks, DEX for
+token exchange \\
+\textbf{Payment Model} & 3 free prompts/day, paid plans & 1 SOL for
+access & Free (10 prompts/day for guests, 30 for logged-in users) & 1
+SOL to create agent, 1 USDC per action \\
+\textbf{Integrations} & Pump.portal, CoinGecko, Dexscreener & Jupiter,
+Pump.fun, Magic Eden & Twitter (market sentiment, news) & Jupiter, Lulo
+(DEX), X, Copy Cat (copy trading) \\
+\textbf{Market Cap} & \$30K & \$5M & \$8.9M & \$63.8M \\
+\textbf{Holders} & 3,120 & 23,189 & 6,200 & 64,524 \\
+\textbf{Followers} & 3,587 & 28.9K & 37.6K & 125.4K \\
+\textbf{Discord} & 67 & 3,695 & 2,625 & None \\
+\textbf{Transparency} & Open-source, clear payment model but lacks user
+guide & Open-source, no documentation, unclear pricing & Closed-source,
+but well-documented & Closed-source, unclear pricing, hidden fees,
+non-refundable payments \\
+\bottomrule()
+\end{longtable}
+
+\textbf{1. Features}
+
+Each platform offers unique functionalities tailored to different
+aspects of blockchain interaction. Some focus on data extraction, while
+others integrate AI and trading tools.
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{SWQuery}: Provides a query interface for interacting with
+  on-chain data, allowing users to efficiently extract specific
+  information from blockchains.
+\item
+  \textbf{Neur}: Acts as an ``intelligent copilot'' for the Solana
+  blockchain, offering AI-based insights and delegated actions.
+  Facilitates seamless interactions with DeFi protocols and NFTs through
+  intelligent interfaces.
+\item
+  \textbf{STRAWBERRY}: Acts as an AI agent that analyzes market
+  sentiment based on news, portfolio operations (coming soon), and
+  twitter information.
+\item
+  \textbf{GRIFFAIN}: Combines AI agents with a blockchain platform,
+  allowing users to create and deploy customized agents for various
+  tasks. It integrates a DEX to support token exchanges and liquidity
+  provisioning.
+\end{itemize}
+
+Platforms that automate data extraction(\cite{swquery2025}) and market
+analysis(\cite{strawberry2025}) make information more accessible, while AI-driven
+tools(\cite{neur2025}, \cite{griffain2025}) provide deeper functionality but may require
+higher technical understanding. Users looking for ease of use may
+gravitate toward simpler solutions, while advanced traders may prefer
+customizable AI agents.
+
+\textbf{2. Payment Model (Freemium/Pay-to-Use)}
+
+The payment models vary significantly, ranging from freemium options to
+pay-to-use systems with non-refundable fees.
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{SWQuery}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    3 free prompts per day.
+  \item
+    3 plans offering increasing amounts of requests (no expiration).
+  \end{itemize}
+\item
+  \textbf{Neur}: 1 SOL to access any type of functionality.
+\item
+  \textbf{STRAWBERRY}: Completely free, but with 10 prompts a day if
+  you're not logged in and 30 if you are.
+\item
+  \textbf{GRIFFAIN}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    1 non refundable SOL to create an agent.
+  \item
+    1 USDC per prompt, task, tweet.
+  \end{itemize}
+\end{itemize}
+
+Freemium models(\cite{swquery2025}, \cite{strawberry2025}) provide a low-risk entry point,
+making them appealing to new users. Neur's fixed fee is ideal for
+committed users but less attractive for occasional ones. GRIFFAIN's
+per-use cost could add up quickly, limiting accessibility for
+budget-conscious users.
+
+\textbf{3. Integration with Protocols}
+
+Integration with major blockchain protocols and services determines how
+well each platform can interact with the broader ecosystem.
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{SWQuery}: Currently integrates with pump.portal to interact
+  with tokens released in real time, with CoinGecko to search for
+  information on a specific token and with Dexscreener to bring up
+  trending tokens.
+\item
+  \textbf{Neur}: Integrated with several Solana protocols and services,
+  including Jupiter, Pump.fun and Magic Eden, facilitating interactions
+  with the Solana ecosystem, such as launches and operations involving
+  tokens and NFTs.
+\item
+  \textbf{STRAWBERRY}: Little information about its integrations, it is
+  clear that it integrates with X to search for market sentiment, news
+  and most talked about tokens.
+\item
+  \textbf{GRIFFAIN}: Integrates a DEX to support token exchanges and
+  liquidity provisioning (Lulo), suggesting compatibility with
+  decentralized finance protocols, integrates with X for posts and
+  replies. It also integrates with Jupiter to operate tokens and DCAs
+  (purchases at constant intervals of a token to make an average price).
+  It also integrates with Copy Cat for copy trading.
+\end{itemize}
+
+Users seeking comprehensive DeFi solutions benefit from \cite{neur2025} and
+\cite{griffain2025}, while those focused on market trends may prefer STRAWBERRY.
+\cite{swquery2025} appeals to traders who need raw data but lacks direct trading
+functionalities. The depth of integration influences how much manual
+effort users need to exert.
+
+\textbf{4. Acceptance by the community}
+
+Community acceptance metrics reveal significant variations in market
+penetration and user engagement, consistent with patterns observed by
+\textcite{rodriguez2024} in their framework for quantifying
+blockchain community engagement.
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{SWQuery}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Market Cap: \$30K
+  \item
+    Holders: 3120
+  \item
+    Followers: 3587
+  \item
+    Discord: 67
+  \end{itemize}
+\item
+  \textbf{Neur}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Market Cap: \$5M
+  \item
+    Holders: 23,189
+  \item
+    Followers: 28.9K
+  \item
+    Discord: 3695
+  \end{itemize}
+\item
+  \textbf{STRAWBERRY}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Market \$8.9M
+  \item
+    Holders: 6.2K
+  \item
+    Followers: 37.6K
+  \item
+    Discord: 2625 members
+  \end{itemize}
+\item
+  \textbf{GRIFFAIN}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Market Cap: \$63.8M
+  \item
+    Holders: 64,524
+  \item
+    Followers: 125.4K
+  \item
+    Discord: None
+  \end{itemize}
+\end{itemize}
+
+Platforms with higher adoption(\cite{griffain2025}, \cite{strawberry2025}) offer more
+community engagement and stability. Users may feel more comfortable
+investing in platforms with a strong following. Smaller
+platforms(\cite{swquery2025}) may have lower competition but could face
+sustainability challenges.
+
+\textbf{5. Transparency}
+
+Transparency directly affects the user experience, trust, and
+decision-making process. Platforms with clear documentation, transparent
+pricing, and open-source availability tend to foster trust and ease of
+use. On the other hand, a lack of clear information---especially
+regarding payments, usage limitations, and refund policies---can lead to
+confusion, frustration, and reluctance to adopt the service. Users may
+hesitate to commit to platforms with hidden fees, unclear pricing, or
+vague usage terms, potentially pushing them toward more transparent
+alternatives.
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{SWQuery}:
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Currently has documentation that guides the use of the SDK but does
+    not have documentation/guide for the user to understand how the
+    platform works.
+  \item
+    Regarding the payment system, the number of free user requests is
+    clear but it is not explicit how often this is restored.
+    Additionally, it is clear how the plans and payments work.
+  \item
+    It is open source.
+  \end{itemize}
+\item
+  \textbf{Neur}:
+
+  \begin{itemize}
+  \tightlist
+  \item
+    There is no documentation to guide the user and by not offering a
+    free trial it creates uncertainty regarding payment for the service.
+  \item
+    It is open source.
+  \end{itemize}
+\item
+  \textbf{STRAWBERRY}:
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Has a demonstration video on the website and the functionalities
+    that the platform offers are very clear on the home page.
+  \item
+    Extremely complete documentation.
+  \item
+    It is not clear if it is paid or not.
+  \item
+    It is closed source.
+  \end{itemize}
+\item
+  \textbf{GRIFFAIN}:
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Has good documentation in general, but it is not clear how to use
+    the platform.
+  \item
+    Support is a paid chatbot.
+  \item
+    There are features that are pay-to-use in fine print and that in the
+    fine print say they are non-refundable.
+  \item
+    It is closed source.
+  \end{itemize}
+\end{itemize}
+
+Platforms with clear documentation(\cite{strawberry2025}, \cite{swquery2025}) offer a smoother
+onboarding experience, while those with unclear information(\cite{neur2025},
+\cite{griffain2025}) may confuse new users. Open-source projects increase trust,
+but lack of transparency in pricing(\cite{griffain2025}) can lead to unexpected
+costs.
+
+To better understand how SWQuery delivers its capabilities, we now move from external comparisons to internal mechanics. The Blocks Diagram illustrates the major components of the SWQuery system and their high-level interactions, offering a visual foundation for how different services and data flows are structured within the platform.
+
+\hypertarget{blocks-diagram}{%
+\section{Blocks Diagram}\label{blocks-diagram}}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=1.2\linewidth]{blockdiagram.drawio.png}
+\caption{\label{fig:blockdiagram}This image represents SWQuery block diagram.}
+\end{figure}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \textbf{Frontend(Next.js + Tailwind) → Backend(Rust)}
+\end{enumerate}
+
+\begin{itemize}
+\tightlist
+\item
+  The user interacts with the SWQuery website (built with Next.js and
+  Tailwind CSS).
+\item
+  A request is sent to the backend (Rust) for querying Solana blockchain
+  data or risk analysis.
+\item
+  The request might include a token address, wallet address, or specific
+  query parameters.
+\end{itemize}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  \textbf{Backend(Rust) → SWQuery SDK}
+\end{enumerate}
+
+\begin{itemize}
+\tightlist
+\item
+  The backend processes the request and forwards it to the SWQuery SDK.
+\item
+  The SDK acts as a middleware, handling blockchain queries and risk
+  analysis.
+\end{itemize}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{2}
+\tightlist
+\item
+  \textbf{SWQuery SDK → Helius}
+\end{enumerate}
+
+\begin{itemize}
+\tightlist
+\item
+  The SDK queries Helius RPC to fetch on-chain Solana data.
+\item
+  This could include transaction history, token metadata, or account
+  states.
+\end{itemize}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{3}
+\tightlist
+\item
+  \textbf{SWQuery SDK → Python API}
+\end{enumerate}
+
+\begin{itemize}
+\tightlist
+\item
+  If additional processing is needed(e.g., risk analysis using AI), the
+  SDK forwards the request to a Python API.
+\item
+  The Python API acts as an agent for interacting with OpenAI.
+\end{itemize}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{4}
+\tightlist
+\item
+  \textbf{Python API → OpenAI}
+\end{enumerate}
+
+\begin{itemize}
+\tightlist
+\item
+  The Python API sends relevant blockchain data to OpenAI for
+  interpretation.
+\item
+  OpenAI processes the data, detecting potential risks or summarizing
+  insights.
+\end{itemize}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{5}
+\tightlist
+\item
+  \textbf{Python API → Backend(Rust)}
+\end{enumerate}
+
+\begin{itemize}
+\tightlist
+\item
+  The Python API returns the processed data(e.g., risk assessment or
+  AI-generated insights) to the backend.
+\item
+  This allows the backend to format and store relevant information.
+\end{itemize}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{6}
+\tightlist
+\item
+  \textbf{Backend(Rust) → External Services(CoinGecko, Pump.fun,
+  DexScreener)}
+\end{enumerate}
+
+\begin{itemize}
+\tightlist
+\item
+  The backend may fetch additional market data from external
+  services(e.g., token prices from CoinGecko, liquidity info from
+  DexScreener).
+\item
+  This enhances the SWQuery SDK's ability to provide a full market
+  overview.
+\end{itemize}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{7}
+\tightlist
+\item
+  \textbf{External Services → SWQuery SDK}
+\end{enumerate}
+
+\begin{itemize}
+\tightlist
+\item
+  The external services return requested data, which is processed by the
+  SDK and made available to the backend.
+\end{itemize}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{8}
+\tightlist
+\item
+  \textbf{Backend(Rust) → PostgreSQL}
+\end{enumerate}
+
+\begin{itemize}
+\tightlist
+\item
+  The backend stores retrieved blockchain data, risk analysis results,
+  and query history in a PostgreSQL database.
+\item
+  This helps with caching, analytics, and reducing redundant queries.
+\end{itemize}
+
+While the Blocks Diagram shows a static snapshot of the system's components, the next section — Sequence Diagram — shifts our focus to the dynamics of data flow. Here, we explore how individual features operate step-by-step, from user interaction to blockchain querying and backend responses, providing a clear picture of system behavior.
+
+\hypertarget{sequence-diagram}{%
+\section{Sequence Diagram}\label{sequence-diagram}}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=1.2\linewidth]{sequencediagram.png}
+\caption{\label{fig:sequencediagram}This image represents SWQuery sequence diagram.}
+\end{figure}
+
+\hypertarget{step-by-step-breakdown}{%
+\subsection{Step-by-Step Breakdown}\label{step-by-step-breakdown}}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Frontend Submits Prompt
+\end{enumerate}
+
+\begin{itemize}
+\tightlist
+\item
+  The user inputs a query in the frontend UI.
+\item
+  The request is sent to the backend with relevant parameters.
+\end{itemize}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  Backend Validates API Key
+\end{enumerate}
+
+\begin{itemize}
+\tightlist
+\item
+  The backend checks the provided API key for authentication.
+\item
+  If the key is invalid, an error is returned.
+\end{itemize}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{2}
+\tightlist
+\item
+  Backend Fetches Credit Info
+\end{enumerate}
+
+\begin{itemize}
+\tightlist
+\item
+  The backend retrieves credit balance and usage limits for the user.
+\item
+  If the user lacks sufficient credits, the process halts with an error.
+\end{itemize}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{3}
+\tightlist
+\item
+  Backend Queries via SDK
+\end{enumerate}
+
+\begin{itemize}
+\tightlist
+\item
+  The backend invokes the SWQuery SDK, passing the query parameters.
+\end{itemize}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{4}
+\tightlist
+\item
+  SDK Queries Solana via Helius
+\end{enumerate}
+
+\begin{itemize}
+\tightlist
+\item
+  The SDK sends an RPC request to the Helius API to fetch blockchain
+  data.
+\end{itemize}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{5}
+\tightlist
+\item
+  Helius Fetches Data from Solana
+\end{enumerate}
+
+\begin{itemize}
+\tightlist
+\item
+  Helius queries the Solana blockchain for relevant transactions or
+  assets.
+\end{itemize}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{6}
+\tightlist
+\item
+  Helius Responds to SDK
+\end{enumerate}
+
+\begin{itemize}
+\tightlist
+\item
+  Helius returns the requested blockchain data to the SDK.
+\end{itemize}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{7}
+\tightlist
+\item
+  SDK Sends Query Result to Backend
+\end{enumerate}
+
+\begin{itemize}
+\tightlist
+\item
+  The SDK processes the response and sends structured data back to the
+  backend.
+\end{itemize}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{8}
+\tightlist
+\item
+  Backend Sends Query to Python API
+\end{enumerate}
+
+\begin{itemize}
+\tightlist
+\item
+  The backend forwards the processed blockchain data to the Python API.
+\end{itemize}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{9}
+\tightlist
+\item
+  Python API Queries OpenAI
+\end{enumerate}
+
+\begin{itemize}
+\tightlist
+\item
+  The Python API sends the user's query along with blockchain data to
+  OpenAI for processing.
+\end{itemize}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{10}
+\tightlist
+\item
+  OpenAI Responds to Python API
+\end{enumerate}
+
+\begin{itemize}
+\tightlist
+\item
+  OpenAI returns an AI-generated response based on the input data.
+\end{itemize}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{11}
+\tightlist
+\item
+  Python API Sends AI-Processed Response to Backend
+\end{enumerate}
+
+\begin{itemize}
+\tightlist
+\item
+  The AI-enhanced response is formatted and sent to the backend.
+\end{itemize}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{12}
+\tightlist
+\item
+  Backend Stores Chat Record in Database
+\end{enumerate}
+
+\begin{itemize}
+\tightlist
+\item
+  The response, user query, and relevant metadata are stored in the
+  database.
+\end{itemize}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{13}
+\tightlist
+\item
+  Backend Returns Response to Frontend
+\end{enumerate}
+
+\begin{itemize}
+\tightlist
+\item
+  The final processed response is sent back to the frontend for display
+  to the user.
+\end{itemize}
+
+\hypertarget{function-breakdown}{%
+\subsection{Function Breakdown}\label{function-breakdown}}
+
+The sequence diagram illustrates the interaction between the SDK,
+backend, and Solana via Helius RPC. Below, each flow is broken down in
+detail.
+
+\subsubsection{1. Querying the SDK with a user prompt and address}
+\textbf{Function Signature:}
+\begin{verbatim}
+query(input: String, pubkey: String) -> Result<SWqueryResponse, SdkError>
+\end{verbatim}
+
+This function serves as the main entry point for interacting with the SWQuery SDK. It accepts a user-generated prompt as the \texttt{input}, along with a Solana \texttt{pubkey}. Upon invocation, the function retrieves the Helius API key from the environment and formats a payload to be sent to the Agent API. This payload includes the user prompt and associated address. The Agent API processes this prompt using language understanding techniques and determines the appropriate query type (e.g., fetch balance, recent transactions, asset information). Based on the detected intent, the SDK calls the corresponding internal function to execute the requested action. The result is then normalized and returned to the user in a consistent format.
+
+\textbf{Expected Output:} A JSON object containing the response from the appropriate internal function or an error if the prompt is invalid.
+
+\subsubsection{2. Fetching recent transactions}
+\textbf{Function Signature:}
+\begin{verbatim}
+getRecentTransactions(address: String, days: u8) -> Result<Value, SdkError>
+\end{verbatim}
+
+This function retrieves recent transactions associated with a given Solana address. It accepts the \texttt{address} to be queried and a number of days as a filter. Internally, it constructs a request to Helius using the \texttt{getSignaturesForAddress} method. Once it obtains the list of signatures, the function applies an optional filter based on the provided day count, calculating the threshold timestamp and filtering out any transactions older than that. It then returns the filtered set of transactions in JSON format.
+
+\textbf{Expected Output:} A JSON array of recent transaction objects related to the given address, optionally filtered by age.
+
+\subsubsection{3. Checking the balance of an address}
+\textbf{Function Signature:}
+\begin{verbatim}
+getBalance(address: String) -> Result<Value, SdkError>
+\end{verbatim}
+
+This function retrieves the SOL balance of a given Solana address. It builds a request to Helius's \texttt{getBalance} RPC method using the provided \texttt{address}. The result is parsed to extract the lamport balance, which is then converted into SOL by dividing by 1,000,000,000 (the lamports per SOL). The final balance is returned in a user-friendly JSON format.
+
+\textbf{Expected Output:} A JSON object containing the SOL balance of the queried address.
+
+\subsubsection{4. Retrieving all assets owned by a wallet}
+\textbf{Function Signature:}
+\begin{verbatim}
+getAssetsByOwner(owner: String) -> Result<Value, SdkError>
+\end{verbatim}
+
+This function retrieves all assets associated with a given wallet address. It sends a request to the Helius RPC using the method \texttt{getAssetsByOwner}, passing the owner’s address in the parameters. The Helius RPC returns a list of all assets currently held by the wallet, including SPL tokens, NFTs, and any other asset types. This response is parsed and returned as a structured JSON array to the user.
+
+\textbf{Expected Output:} JSON list of assets.
+
+\subsubsection{5. Retrieving trending tokens on Solana}
+\textbf{Function Signature:}
+\begin{verbatim}
+getTrendingTokens() -> Result<Value, SdkError>
+\end{verbatim}
+
+This function queries Helius to retrieve currently trending tokens on the Solana blockchain. It invokes the RPC method \texttt{getTrendingTokens} without any parameters. Helius responds with an array of tokens that are gaining traction based on metrics such as transaction volume, user engagement, or mint activity. This information is useful for surfacing popular or viral tokens in a dashboard or analytics context.
+
+\textbf{Expected Output:} JSON array of token data.
+
+\subsubsection{6. Searching for a token by its name}
+\textbf{Function Signature:}
+\begin{verbatim}
+searchTokenByName(token_name: String) -> Result<Value, SdkError>
+\end{verbatim}
+
+This function allows a user to look up a token using its human-readable name. It sends a request to a backend API endpoint with the method \texttt{searchTokenByName} and the token name as a parameter. The backend then performs a name-based search using indexed metadata or heuristics, and returns the most relevant match, including the token’s address, symbol, metadata, and image.
+
+\textbf{Expected Output:} JSON object with token details.
+
+\subsubsection{7. Analyzing the rug pull risk of a token}
+\textbf{Function Signature:}
+\begin{verbatim}
+analyzeRugPullRisk(token_address: String) -> Result<Value, SdkError>
+\end{verbatim}
+
+This function checks whether a token may pose a risk of being a rug pull. It sends the token address to a custom backend risk analysis service via the method \texttt{analyzeRugPullRisk}. The backend evaluates risk factors such as liquidity status, ownership centralization, mint behavior, and suspicious activity patterns. A risk score is computed and returned, allowing applications to alert users to potentially dangerous tokens.
+
+\textbf{Expected Output:} JSON object with risk score.
+
+\subsubsection{8. Real-time token and account subscriptions}
+This section includes three WebSocket-based subscription functions that enable real-time tracking of blockchain events using Helius WebSocket streams.
+
+\textbf{Function Signature:}
+\begin{verbatim}
+accountTransactionSubscription(user_address: String, account_address: String)
+\end{verbatim}
+
+This subscription connects to Helius WebSocket and listens for any transactions involving a specific account. When a transaction occurs for the given \texttt{account\_address}, it is immediately streamed to the \texttt{user\_address} client, enabling live monitoring of balances or activity.
+
+\textbf{Function Signature:}
+\begin{verbatim}
+tokenTransactionSubscription(user_address: String, token_address: String)
+\end{verbatim}
+
+This function subscribes the user to real-time updates of all transactions related to a specific token address. It leverages Helius WebSocket and delivers instant notifications when the tracked token is transferred, burned, minted, or otherwise involved in an on-chain event.
+
+\textbf{Function Signature:}
+\begin{verbatim}
+newTokenSubscriptions(user_address: String)
+\end{verbatim}
+
+This subscription establishes a live feed for new token listings on Solana. As new tokens are minted and registered on-chain, the user’s client receives immediate updates, enabling applications like token explorers or discovery dashboards to reflect the latest assets in real time.
+
+\textbf{Expected Output:} Live streamed transaction or token updates based on the subscription type.
+
+With an understanding of both the system structure and execution flow, we now delve into the rationale behind key design choices. The Architectural Decisions section discusses the frameworks, technologies, and patterns selected during development, and how they align with SWQuery’s goals for performance, scalability, and reliability.
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\hypertarget{architectural-decisions}{%
+\section{Architectural Decisions}\label{architectural-decisions}}
+
+\hypertarget{rust-for-the-backend}{%
+\subsection{1. Rust for the Backend}\label{rust-for-the-backend}}
+
+\hypertarget{reasoning}{%
+\subsubsection{\texorpdfstring{\textbf{Reasoning:}}{Reasoning:}}\label{reasoning}}
+
+Rust was chosen as the primary backend language due to its superior
+performance, memory safety, and control over system resources. Given
+that SWQuery interacts with the Solana blockchain and handles
+high-throughput queries, Rust ensures efficient execution with minimal
+overhead.
+
+\hypertarget{tradeoffs-considered}{%
+\subsubsection{\texorpdfstring{\textbf{Tradeoffs
+Considered:}}{Tradeoffs Considered:}}\label{tradeoffs-considered}}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Performance vs.~Development Time:} Rust's ownership and
+  borrowing model significantly enhances memory safety and concurrency
+  handling. However, it comes with a steep learning curve, leading to
+  longer development times.
+\item
+  \textbf{Alternative Considered:} Node.js was evaluated for its rapid
+  development capabilities but was ruled out due to its higher runtime
+  overhead and lack of low-level control.
+\end{itemize}
+
+\hypertarget{openai-for-ai-processing}{%
+\subsection{2. OpenAI for AI
+Processing}\label{openai-for-ai-processing}}
+
+\hypertarget{reasoning-1}{%
+\subsubsection{\texorpdfstring{\textbf{Reasoning:}}{Reasoning:}}\label{reasoning-1}}
+
+OpenAI was integrated into the architecture to leverage advanced
+language models for blockchain data interpretation. Developing a
+proprietary AI system would have been cost-prohibitive and
+time-consuming.
+
+\hypertarget{tradeoffs-considered-1}{%
+\subsubsection{\texorpdfstring{\textbf{Tradeoffs
+Considered:}}{Tradeoffs Considered:}}\label{tradeoffs-considered-1}}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{AI Quality vs.~Cost:} OpenAI provides state-of-the-art AI
+  capabilities, but API usage incurs recurring costs. An alternative
+  would have been self-hosting an open-source LLM, which would require
+  additional infrastructure and expertise.
+\item
+  \textbf{Alternative Considered:} Open-source models like Llama 3 or
+  Mistral were considered, but OpenAI's API offered a more reliable and
+  production-ready solution.
+\end{itemize}
+
+\hypertarget{python-for-ai-agent-server}{%
+\subsection{3. Python for AI Agent
+Server}\label{python-for-ai-agent-server}}
+
+\hypertarget{reasoning-2}{%
+\subsubsection{\texorpdfstring{\textbf{Reasoning:}}{Reasoning:}}\label{reasoning-2}}
+
+A separate Python-based API was implemented for handling AI-related
+tasks due to Python's vast ecosystem of AI and data processing
+libraries. This decision was made to optimize AI integrations without
+affecting the performance of the Rust backend.
+
+\hypertarget{tradeoffs-considered-2}{%
+\subsubsection{\texorpdfstring{\textbf{Tradeoffs
+Considered:}}{Tradeoffs Considered:}}\label{tradeoffs-considered-2}}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Development Speed vs.~Execution Speed:} Python offers fast
+  development cycles but is slower in execution compared to Rust. Since
+  AI processing is not real-time critical, Python was a suitable choice.
+\item
+  \textbf{Alternative Considered:} Implementing AI processing in Rust,
+  but the lack of mature AI libraries made Python the more practical
+  choice.
+\end{itemize}
+
+\hypertarget{postgresql-for-database-storage}{%
+\subsection{4. PostgreSQL for Database
+Storage}\label{postgresql-for-database-storage}}
+
+\hypertarget{reasoning-3}{%
+\subsubsection{\texorpdfstring{\textbf{Reasoning:}}{Reasoning:}}\label{reasoning-3}}
+
+PostgreSQL was chosen as the primary database due to its robust support
+for relational data, indexing, and transaction integrity. It is
+well-suited for storing query logs, caching blockchain data, and
+managing user interactions.
+
+\hypertarget{tradeoffs-considered-3}{%
+\subsubsection{\texorpdfstring{\textbf{Tradeoffs
+Considered:}}{Tradeoffs Considered:}}\label{tradeoffs-considered-3}}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Scalability vs.~Simplicity:} NoSQL databases like MongoDB were
+  considered but deemed unnecessary since the data model is largely
+  structured.
+\item
+  \textbf{Alternative Considered:} A blockchain-based storage solution
+  was also considered but was ruled out due to performance constraints
+  and unnecessary complexity for non-on-chain data.
+\end{itemize}
+
+\hypertarget{next.js-with-tailwind-for-frontend}{%
+\subsection{5. Next.js with Tailwind for
+Frontend}\label{next.js-with-tailwind-for-frontend}}
+
+\hypertarget{reasoning-4}{%
+\subsubsection{\texorpdfstring{\textbf{Reasoning:}}{Reasoning:}}\label{reasoning-4}}
+
+Next.js was selected for its performance optimizations, server-side
+rendering(SSR), and static site generation(SSG) capabilities, which
+enhance user experience by reducing load times. Tailwind CSS was chosen
+for its utility-first approach, making UI development efficient.
+
+\hypertarget{tradeoffs-considered-4}{%
+\subsubsection{\texorpdfstring{\textbf{Tradeoffs
+Considered:}}{Tradeoffs Considered:}}\label{tradeoffs-considered-4}}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Performance vs.~Developer Experience:} Next.js provides a good
+  balance between frontend speed and developer productivity. Alternative
+  frameworks like React with Vite were considered but did not offer as
+  many built-in optimizations.
+\end{itemize}
+
+To further validate our architectural direction, we employ the Architecture Tradeoff Analysis Method (ATAM). This structured evaluation highlights how our system handles quality attributes like modifiability, performance, and security, while identifying risks and their mitigation strategies.
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\hypertarget{atamarchitecture-tradeoff-analysis-method}{%
+\section{ATAM(Architecture Tradeoff Analysis
+Method)}\label{atamarchitecture-tradeoff-analysis-method}}
+
+\hypertarget{business-goals}{%
+\subsection{\texorpdfstring{\textbf{1. Business
+Goals}}{1. Business Goals}}\label{business-goals}}
+
+The core objectives of SWQuery:
+
+\begin{itemize}
+\tightlist
+\item
+  Efficiently query \textbf{Solana blockchain data} using OpenAI and
+  Helius.
+\item
+  Provide a responsive web interface for users to interact with
+  blockchain insights.
+\item
+  Ensure low-latency responses for users.
+\item
+  Maintain security and reliability in handling sensitive blockchain
+  data.
+\end{itemize}
+
+\hypertarget{quality-attributes}{%
+\subsection{\texorpdfstring{\textbf{2. Quality
+Attributes}}{2. Quality Attributes}}\label{quality-attributes}}
+
+The architecture should be evaluated based on the following
+\textbf{quality attributes}:
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.5000}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.5000}}@{}}
+\toprule()
+\begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Attribute}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Why It Matters}
+\end{minipage} \\
+\midrule()
+\endhead
+\textbf{Performance} & Queries should be processed quickly with minimal
+delay. \\
+\textbf{Scalability} & The system should handle increased query volume
+as user adoption grows. \\
+\textbf{Security} & Data integrity and protection against unauthorized
+access are crucial. \\
+\textbf{Maintainability} & The system should allow easy updates to
+backend services and SDK improvements. \\
+\textbf{Interoperability} & The architecture should support interactions
+between frontend, backend, SDK, and external APIs. \\
+\textbf{Reliability} & The system should handle failures gracefully and
+ensure uptime. \\
+\bottomrule()
+\end{longtable}
+
+\hypertarget{architectural-approaches}{%
+\subsection{\texorpdfstring{\textbf{3. Architectural
+Approaches}}{3. Architectural Approaches}}\label{architectural-approaches}}
+
+Your architecture incorporates several key design choices:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \textbf{Rust-based Backend}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \textbf{Pros}: High performance, memory safety, and low resource
+    consumption.
+  \item
+    \textbf{Cons}: Steeper learning curve and limited ecosystem compared
+    to Node.js.
+  \item
+    \textbf{Tradeoff}: Performance vs.~Development Speed. Rust improves
+    execution efficiency but may slow development.
+  \end{itemize}
+\item
+  \textbf{SWQuery SDK for Blockchain Queries}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \textbf{Pros}: Modular and reusable SDK for querying Solana.
+  \item
+    \textbf{Cons}: Dependency on third-party services(OpenAI, Helius,
+    Pump Portal, CoinGecko).
+  \item
+    \textbf{Tradeoff}: Reusability vs.~Dependency Management. SDK
+    abstraction simplifies query logic but adds an external dependency.
+  \end{itemize}
+\item
+  \textbf{Python API for OpenAI \& Helius}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \textbf{Pros}: Python is well-suited for AI-based queries and API
+    interactions.
+  \item
+    \textbf{Cons}: Potential latency when interfacing between Rust and
+    Python.
+  \item
+    \textbf{Tradeoff}: AI Capabilities vs.~Latency. Python simplifies AI
+    integration but may slow query execution.
+  \end{itemize}
+\item
+  \textbf{PostgreSQL for Storage}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \textbf{Pros}: Reliable relational database with strong query
+    capabilities.
+  \item
+    \textbf{Cons}: Potential scalability concerns for high-frequency
+    queries.
+  \item
+    \textbf{Tradeoff}: Structured Data vs.~Scalability. SQL databases
+    are robust but may require optimizations for high loads.
+  \end{itemize}
+\end{enumerate}
+
+\hypertarget{architectural-risks}{%
+\subsection{\texorpdfstring{\textbf{4. Architectural
+Risks}}{4. Architectural Risks}}\label{architectural-risks}}
+
+Potential risks in the current design:
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Latency Bottlenecks}: Python API calls to OpenAI and Helius
+  may introduce delays.
+\item
+  \textbf{Scalability of PostgreSQL}: If many users query blockchain
+  data frequently, PostgreSQL may become a bottleneck.
+\item
+  \textbf{Rust Adoption Complexity}: Hiring developers proficient in
+  Rust may be harder compared to more common backend languages.
+\end{itemize}
+
+\hypertarget{sensitivity-tradeoff-points}{%
+\subsection{\texorpdfstring{\textbf{5. Sensitivity \& Tradeoff
+Points}}{5. Sensitivity \& Tradeoff Points}}\label{sensitivity-tradeoff-points}}
+
+\hypertarget{rust-for-backend-development}{%
+\subsubsection{\texorpdfstring{\textbf{5.1. Rust for Backend
+Development}}{5.1. Rust for Backend Development}}\label{rust-for-backend-development}}
+
+\hypertarget{tradeoffs}{%
+\paragraph{\texorpdfstring{\textbf{Tradeoffs:}}{Tradeoffs:}}\label{tradeoffs}}
+
+\textbf{Performance \& Control:}
+
+\begin{itemize}
+\tightlist
+\item
+  Rust provides \textbf{high performance} and \textbf{low-level control}
+  over processes, which is crucial for a system interacting with
+  blockchain.
+\item
+  Its \textbf{ownership and borrowing model} ensures memory safety
+  without garbage collection, avoiding runtime overhead.
+\end{itemize}
+
+\textbf{Development Complexity \& Time Cost:}
+
+\begin{itemize}
+\tightlist
+\item
+  Rust has a \textbf{steep learning curve} due to its strict memory
+  safety rules, leading to \textbf{longer development time} compared to
+  languages like TypeScript or Go.
+\item
+  Borrowing and ownership concepts require careful design, slowing down
+  initial development but reducing runtime errors.
+\end{itemize}
+
+\hypertarget{evaluation}{%
+\paragraph{\texorpdfstring{\textbf{Evaluation:}}{Evaluation:}}\label{evaluation}}
+
+\begin{itemize}
+\tightlist
+\item
+  If the system requires \textbf{high performance, low latency, and
+  safety guarantees}, Rust is a solid choice despite its complexity.
+\item
+  If \textbf{faster development} were prioritized over performance, a
+  language like \textbf{Node.js or Go} might be considered.
+\end{itemize}
+
+\hypertarget{openai-for-ai-processing-1}{%
+\subsubsection{\texorpdfstring{\textbf{5.2. OpenAI for AI
+Processing}}{5.2. OpenAI for AI Processing}}\label{openai-for-ai-processing-1}}
+
+\hypertarget{tradeoffs-1}{%
+\paragraph{\texorpdfstring{\textbf{Tradeoffs:}}{Tradeoffs:}}\label{tradeoffs-1}}
+
+\textbf{Advanced AI Capabilities:}
+
+\begin{itemize}
+\tightlist
+\item
+  OpenAI provides \textbf{state-of-the-art models} that would be
+  expensive and time-consuming to develop in-house.
+\item
+  Reduces complexity by leveraging pre-built models instead of training
+  and fine-tuning a proprietary AI.
+\end{itemize}
+
+\textbf{Financial \& Time Cost:}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{API usage costs can be high}, especially as query volume
+  increases. Maintaining cost-effective API usage might require caching
+  or optimizing queries.
+\item
+  \textbf{Dependency risk}: OpenAI is a third-party provider, meaning
+  potential API changes, rate limits, or pricing adjustments could
+  impact operations.
+\item
+  \textbf{Latency concerns}: Depending on OpenAI's response times,
+  real-time applications might experience slight delays.
+\end{itemize}
+
+\hypertarget{evaluation-1}{%
+\paragraph{\texorpdfstring{\textbf{Evaluation:}}{Evaluation:}}\label{evaluation-1}}
+
+\begin{itemize}
+\tightlist
+\item
+  If \textbf{high-quality AI processing is crucial} and cost is not a
+  primary concern, OpenAI is a strong choice.
+\item
+  If \textbf{cost minimization is critical}, alternative models like
+  \textbf{open-source LLMs(e.g., Llama 3, Mistral)} or
+  \textbf{self-hosted solutions} could be explored.
+\end{itemize}
+
+\hypertarget{rust-server-vs-python-server}{%
+\subsubsection{\texorpdfstring{\textbf{5.3. Rust Server vs Python
+Server}}{5.3. Rust Server vs Python Server}}\label{rust-server-vs-python-server}}
+
+\hypertarget{tradeoffs-2}{%
+\paragraph{\texorpdfstring{\textbf{Tradeoffs:}}{Tradeoffs:}}\label{tradeoffs-2}}
+
+\textbf{Rust Server(Backend)}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{High performance}: Rust is compiled and optimized for speed.
+\item
+  \textbf{Safe concurrency}: Allows efficient parallel processing, which
+  is beneficial for blockchain interactions.
+\item
+  \textbf{Memory safety without garbage collection}, reducing runtime
+  errors.
+\end{itemize}
+
+\textbf{Rust Server Downsides:}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Longer development time} due to complexity.
+\item
+  \textbf{Fewer libraries for AI and data processing}, making Python a
+  better fit for AI-heavy workloads.
+\end{itemize}
+
+\textbf{Python Server(Agent for OpenAI API)}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Rich AI and data science ecosystem}: Python has mature
+  libraries(e.g., TensorFlow, PyTorch, NumPy) that make AI integration
+  seamless.
+\item
+  \textbf{Faster prototyping and development}, reducing time-to-market.
+\item
+  \textbf{Good for external API calls}(e.g., OpenAI, Helius) due to
+  simple syntax and vast HTTP libraries.
+\end{itemize}
+
+\textbf{Python Server Downsides:}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Slower execution speed} compared to Rust.
+\item
+  \textbf{Higher memory usage}, which can impact performance under heavy
+  loads.
+\item
+  \textbf{Not ideal for real-time or highly concurrent tasks} due to
+  Python's Global Interpreter Lock(GIL).
+\end{itemize}
+
+\hypertarget{evaluation-2}{%
+\paragraph{\texorpdfstring{\textbf{Evaluation:}}{Evaluation:}}\label{evaluation-2}}
+
+\begin{itemize}
+\tightlist
+\item
+  Using \textbf{Rust for the main backend} ensures performance and
+  control over blockchain queries.
+\item
+  Using \textbf{Python for AI-related tasks} ensures faster development
+  and access to better AI libraries.
+\item
+  If maintaining two different tech stacks is \textbf{too complex}, one
+  option is to move AI processing into the Rust backend using
+  \textbf{WebAssembly(Wasm)} or integrating Rust-based ML frameworks.
+\end{itemize}
+
+\hypertarget{improvements}{%
+\subsection{\texorpdfstring{\textbf{6.
+Improvements}}{6. Improvements}}\label{improvements}}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \textbf{Reducing API Latency}:
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Introduce \textbf{asynchronous processing} in Rust to optimize calls
+    to the Python API.
+  \item
+    Cache responses for repeated blockchain queries to reduce redundant
+    API calls.
+  \end{itemize}
+\item
+  \textbf{Enhancing Scalability}:
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Evaluate a \textbf{NoSQL alternative(e.g., MongoDB)} for handling
+    blockchain query results.
+  \item
+    Implement \textbf{Redis caching} for frequently requested data.
+  \end{itemize}
+\item
+  \textbf{Improving Developer Experience}:
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Provide well-documented APIs for easier onboarding of developers.
+  \item
+    Consider adding a GraphQL layer to improve flexibility in frontend
+    queries.
+  \end{itemize}
+\end{enumerate}
+
+Building on the architectural blueprint, the next section outlines the Functional Requirements of SWQuery. These requirements represent the concrete behaviors the system must implement, directly tying back to user needs and use cases within the DefAI landscape.
+
+\hypertarget{functional-requirements}{%
+\section{\texorpdfstring{\textbf{Functional
+Requirements}}{Functional Requirements}}\label{functional-requirements}}
+
+\hypertarget{core-functionalities-existing-features}{%
+\subsection{\texorpdfstring{\textbf{1. Core Functionalities (Existing
+Features)}}{1. Core Functionalities (Existing Features)}}\label{core-functionalities-existing-features}}
+
+\hypertarget{transaction-retrieval-analysis}{%
+\subsubsection{\texorpdfstring{\textbf{1.1 Transaction Retrieval \&
+Analysis}}{1.1 Transaction Retrieval \& Analysis}}\label{transaction-retrieval-analysis}}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{FR1}: The system must retrieve recent transactions associated
+  with a given \textbf{transaction address} within a specified day time
+  range. (\texttt{getRecentTransactions(address,\ days)})
+
+  \begin{itemize}
+  \tightlist
+  \item
+    This function is referenced in the SWQuery SDK, in
+    \href{https://github.com/SWQuery/swquery/blob/main/swquery/src/client.rs}{swquery/src/client.rs}
+    in line 542
+  \end{itemize}
+\item
+  \textbf{FR2}: The system must retrieve transaction details using a
+  unique transaction signature. (\texttt{getTransaction(signature)})
+
+  \begin{itemize}
+  \tightlist
+  \item
+    This function is referenced in the SWQuery SDK, in
+    \href{https://github.com/SWQuery/swquery/blob/main/swquery/src/client.rs}{swquery/src/client.rs}
+    in line 642
+  \end{itemize}
+\end{itemize}
+
+\hypertarget{account-asset-information}{%
+\subsubsection{\texorpdfstring{\textbf{1.2 Account \& Asset
+Information}}{1.2 Account \& Asset Information}}\label{account-asset-information}}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{FR3}: The system must return the current balance of a given
+  \textbf{wallet address.} (\texttt{getBalance(address)})
+
+  \begin{itemize}
+  \tightlist
+  \item
+    This function is referenced in the SWQuery SDK, in
+    \href{https://github.com/SWQuery/swquery/blob/main/swquery/src/client.rs}{swquery/src/client.rs}
+    in line 764
+  \end{itemize}
+\item
+  \textbf{FR4}: The system must retrieve a list of assets (tokens, NFTs)
+  owned by a specific \textbf{wallet address.}
+  (\texttt{getAssetsByOwner(owner)})
+
+  \begin{itemize}
+  \tightlist
+  \item
+    This function is referenced in the SWQuery SDK, in
+    \href{https://github.com/SWQuery/swquery/blob/main/swquery/src/client.rs}{swquery/src/client.rs}
+    in line 702
+  \end{itemize}
+\end{itemize}
+
+\hypertarget{market-insights}{%
+\subsubsection{\texorpdfstring{\textbf{1.3 Market
+Insights}}{1.3 Market Insights}}\label{market-insights}}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{FR5}: The system must provide a list of the 5 trending tokens
+  based on transaction volume and activity in the last 24 hours.
+  (\texttt{getTrendingTokens()})
+
+  \begin{itemize}
+  \tightlist
+  \item
+    This function is referenced in the SWQuery SDK, in
+    \href{https://github.com/SWQuery/swquery/blob/main/swquery/src/client.rs}{swquery/src/client.rs}
+    in line 917
+  \end{itemize}
+\item
+  \textbf{FR6}: The system must allow users to search for a token by
+  name or description that can match the token knowledge base and
+  retrieve relevant details. (\texttt{searchTokenByName(token\_name)})
+
+  \begin{itemize}
+  \tightlist
+  \item
+    This function is referenced in the SWQuery SDK, in
+    \href{https://github.com/SWQuery/swquery/blob/main/swquery/src/client.rs}{swquery/src/client.rs}
+    in line 1023(not exist in branch main, right now only available at
+    development branch, called v3)
+  \end{itemize}
+\end{itemize}
+
+\hypertarget{subscription-based-updates}{%
+\subsubsection{\texorpdfstring{\textbf{1.4 Subscription-Based
+Updates}}{1.4 Subscription-Based Updates}}\label{subscription-based-updates}}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{FR7}: The system must enable users to subscribe to transaction
+  updates involving a specific account(wallet) by its address.
+  (\texttt{accountTransactionSubscription(user\_address,\ account\_address)})
+
+  \begin{itemize}
+  \tightlist
+  \item
+    This function is referenced in the SWQuery SDK, in
+    \href{https://github.com/SWQuery/swquery/blob/main/swquery/src/client.rs}{swquery/src/client.rs}
+    in line 969
+  \end{itemize}
+\item
+  \textbf{FR8}: The system must allow users to subscribe to transactions
+  of a specific token based on the token address.
+  (\texttt{tokenTransactionSubscription(user\_address,\ token\_address)})
+
+  \begin{itemize}
+  \tightlist
+  \item
+    This function is referenced in the SWQuery SDK, in
+    \href{https://github.com/SWQuery/swquery/blob/main/swquery/src/client.rs}{swquery/src/client.rs}
+    in line 988
+  \end{itemize}
+\item
+  \textbf{FR9}: The system must provide token notifications when they
+  are launched to the market.
+  (\texttt{newTokenSubscriptions(user\_address)})
+
+  \begin{itemize}
+  \tightlist
+  \item
+    This function is referenced in the SWQuery SDK, in
+    \href{https://github.com/SWQuery/swquery/blob/main/swquery/src/client.rs}{swquery/src/client.rs}
+    in line 1007
+  \end{itemize}
+\end{itemize}
+
+\hypertarget{roadmap-features-future-enhancements}{%
+\subsection{\texorpdfstring{\textbf{2. Roadmap Features (Future
+Enhancements)}}{2. Roadmap Features (Future Enhancements)}}\label{roadmap-features-future-enhancements}}
+
+\hypertarget{ai-powered-query-analysis}{%
+\subsubsection{\texorpdfstring{\textbf{2.1 AI-Powered Query \&
+Analysis}}{2.1 AI-Powered Query \& Analysis}}\label{ai-powered-query-analysis}}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{FR10}: The system must integrate multiple AI agents (e.g.,
+  DeepSeek, Claude, GPT models) to assist with complex queries and
+  analysis. (\texttt{Multiple\ Agents\ Integration})
+\end{itemize}
+
+\hypertarget{automated-token-nft-operations}{%
+\subsubsection{\texorpdfstring{\textbf{2.2 Automated Token \& NFT
+Operations}}{2.2 Automated Token \& NFT Operations}}\label{automated-token-nft-operations}}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{FR11}: The system must integrate with \textbf{Jupiter} to
+  facilitate token swaps and operations using AI-driven automation.
+  (\texttt{Jupiter\ Integration})
+\item
+  \textbf{FR12}: The system must integrate with \textbf{Magic Eden} to
+  support NFT operations such as listing, purchasing, and monitoring
+  market trends. (\texttt{Magic\ Eden\ Integration})
+\end{itemize}
+
+\hypertarget{sentiment-risk-analysis}{%
+\subsubsection{\texorpdfstring{\textbf{2.3 Sentiment \& Risk
+Analysis}}{2.3 Sentiment \& Risk Analysis}}\label{sentiment-risk-analysis}}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{FR13}: The system must integrate with \textbf{Twitter (X)} to
+  analyze market sentiment by tracking discussions around specific
+  projects or tokens. (\texttt{Twitter\ Integration})
+\item
+  \textbf{FR14}: The system must provide \textbf{rug pull risk
+  assessment} by integrating with \textbf{RugCheck API} to evaluate the
+  legitimacy of a project/token. (\texttt{Rug\ Check})
+\item
+  \textbf{FR15}: The system must analyze \textbf{social media activity}
+  of a project (e.g., community engagement, profile name changes, post
+  frequency) to assess its credibility. (\texttt{Social\ Media\ Check})
+\end{itemize}
+
+Finally, to ensure quality and consistency in implementation, we present Requirements Test Cases. Each test case aligns with a functional requirement, enabling systematic validation of SWQuery’s behavior and ensuring that each component performs as intended under realistic scenarios.
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\hypertarget{requirements-test-cases}{%
+\section{\texorpdfstring{\textbf{Requirements Test
+Cases}}{Requirements Test Cases}}\label{requirements-test-cases}}
+
+\hypertarget{core-functionalities-existing-features-1}{%
+\subsection{\texorpdfstring{\textbf{1. Core Functionalities (Existing
+Features)}}{1. Core Functionalities (Existing Features)}}\label{core-functionalities-existing-features-1}}
+
+\hypertarget{tc1-retrieve-recent-transactions}{%
+\subsubsection{\texorpdfstring{\textbf{TC1: Retrieve Recent
+Transactions}}{TC1: Retrieve Recent Transactions}}\label{tc1-retrieve-recent-transactions}}
+
+\textbf{Pre-condition:}
+
+\begin{itemize}
+\tightlist
+\item
+  Address: \texttt{0xABC123...}
+\item
+  Days: \texttt{7}
+\item
+  The address has at least 3 transactions in the last 7 days.
+\end{itemize}
+
+\textbf{Test Execution:}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Call \texttt{getRecentTransactions(0xABC123...,\ 7)}.
+\item
+  The system queries the blockchain for transactions related to the
+  address within the specified timeframe.
+\end{enumerate}
+
+\textbf{Expected Output:}
+
+\begin{itemize}
+\tightlist
+\item
+  Returns a list of transactions within the last 7 days.
+\item
+  Each transaction should contain \texttt{signature},
+  \texttt{timestamp}, \texttt{amount}, \texttt{token}, and
+  \texttt{sender/receiver}.
+\end{itemize}
+
+\hypertarget{tc2-retrieve-a-specific-transaction}{%
+\subsubsection{\texorpdfstring{\textbf{TC2: Retrieve a Specific
+Transaction}}{TC2: Retrieve a Specific Transaction}}\label{tc2-retrieve-a-specific-transaction}}
+
+\textbf{Pre-condition:}
+
+\begin{itemize}
+\tightlist
+\item
+  Transaction signature: \texttt{0xTX123456}
+\item
+  The transaction exists on the blockchain.
+\end{itemize}
+
+\textbf{Test Execution:}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Call \texttt{getTransaction(0xTX123456)}.
+\item
+  The system fetches the transaction details from the blockchain.
+\end{enumerate}
+
+\textbf{Expected Output:}
+
+\begin{itemize}
+\tightlist
+\item
+  Returns transaction details, including \texttt{timestamp},
+  \texttt{amount}, \texttt{token}, \texttt{from}, \texttt{to}, and
+  \texttt{status}.
+\end{itemize}
+
+\hypertarget{tc3-retrieve-balance-of-an-address}{%
+\subsubsection{\texorpdfstring{\textbf{TC3: Retrieve Balance of an
+Address}}{TC3: Retrieve Balance of an Address}}\label{tc3-retrieve-balance-of-an-address}}
+
+\textbf{Pre-condition:}
+
+\begin{itemize}
+\tightlist
+\item
+  Address: \texttt{0xABC123...}
+\item
+  The address holds \texttt{5.7\ SOL}.
+\end{itemize}
+
+\textbf{Test Execution:}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Call \texttt{getBalance(0xABC123...)}.
+\item
+  The system queries the blockchain for the balance.
+\end{enumerate}
+
+\textbf{Expected Output:}
+
+\begin{itemize}
+\tightlist
+\item
+  Returns balance: \texttt{5.7\ SOL}.
+\end{itemize}
+
+\hypertarget{tc4-retrieve-assets-owned-by-an-address}{%
+\subsubsection{\texorpdfstring{\textbf{TC4: Retrieve Assets Owned by an
+Address}}{TC4: Retrieve Assets Owned by an Address}}\label{tc4-retrieve-assets-owned-by-an-address}}
+
+\textbf{Pre-condition:}
+
+\begin{itemize}
+\tightlist
+\item
+  Address: \texttt{0xDEF456...}
+\item
+  The address owns \texttt{2\ NFTs} and \texttt{3\ different\ tokens}.
+\end{itemize}
+
+\textbf{Test Execution:}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Call \texttt{getAssetsByOwner(0xDEF456...)}.
+\item
+  The system queries the blockchain for assets owned by the address.
+\end{enumerate}
+
+\textbf{Expected Output:}
+
+\begin{itemize}
+\tightlist
+\item
+  Returns a list of assets, including \texttt{NFTs} and \texttt{tokens}.
+\end{itemize}
+
+\hypertarget{tc5-retrieve-trending-tokens}{%
+\subsubsection{\texorpdfstring{\textbf{TC5: Retrieve Trending
+Tokens}}{TC5: Retrieve Trending Tokens}}\label{tc5-retrieve-trending-tokens}}
+
+\textbf{Pre-condition:}
+
+\begin{itemize}
+\tightlist
+\item
+  The system has collected token transaction data.
+\item
+  Trending tokens are determined based on volume and transaction count.
+\end{itemize}
+
+\textbf{Test Execution:}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Call \texttt{getTrendingTokens()}.
+\item
+  The system analyzes and ranks tokens by trading volume and recent
+  activity.
+\end{enumerate}
+
+\textbf{Expected Output:}
+
+\begin{itemize}
+\tightlist
+\item
+  Returns a list of top \textbf{5 trending tokens} with details
+  (\texttt{name}, \texttt{symbol}, \texttt{volume},
+  \texttt{price\ change}).
+\end{itemize}
+
+\hypertarget{tc6-subscribe-to-account-transactions}{%
+\subsubsection{\texorpdfstring{\textbf{TC6: Subscribe to Account
+Transactions}}{TC6: Subscribe to Account Transactions}}\label{tc6-subscribe-to-account-transactions}}
+
+\textbf{Pre-condition:}
+
+\begin{itemize}
+\tightlist
+\item
+  User: \texttt{0xUSER789...}
+\item
+  Target account: \texttt{0xTARGET123...}
+\item
+  Subscription service is active.
+\end{itemize}
+
+\textbf{Test Execution:}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Call
+  \texttt{accountTransactionSubscription(0xUSER789...,\ 0xTARGET123...)}.
+\item
+  A transaction occurs for \texttt{0xTARGET123...}.
+\item
+  The system detects and notifies the user.
+\end{enumerate}
+
+\textbf{Expected Output:}
+
+\begin{itemize}
+\tightlist
+\item
+  User \texttt{0xUSER789...} receives a notification when
+  \texttt{0xTARGET123...} makes a transaction.
+\end{itemize}
+
+\hypertarget{tc7-subscribe-to-token-transactions}{%
+\subsubsection{\texorpdfstring{\textbf{TC7: Subscribe to Token
+Transactions}}{TC7: Subscribe to Token Transactions}}\label{tc7-subscribe-to-token-transactions}}
+
+\textbf{Pre-condition:}
+
+\begin{itemize}
+\tightlist
+\item
+  User: \texttt{0xUSER789...}
+\item
+  Token: \texttt{SOL}
+\item
+  Subscription service is active.
+\end{itemize}
+
+\textbf{Test Execution:}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Call \texttt{tokenTransactionSubscription(0xUSER789...,\ SOL)}.
+\item
+  A transaction occurs for \texttt{SOL}.
+\item
+  The system detects and notifies the user.
+\end{enumerate}
+
+\textbf{Expected Output:}
+
+\begin{itemize}
+\tightlist
+\item
+  User receives a notification when a new transaction involving
+  \texttt{SOL} happens.
+\end{itemize}
+
+\hypertarget{tc8-subscribe-to-new-token-listings}{%
+\subsubsection{\texorpdfstring{\textbf{TC8: Subscribe to New Token
+Listings}}{TC8: Subscribe to New Token Listings}}\label{tc8-subscribe-to-new-token-listings}}
+
+\textbf{Pre-condition:}
+
+\begin{itemize}
+\tightlist
+\item
+  User: \texttt{0xUSER789...}
+\item
+  A new token is listed on the blockchain.
+\end{itemize}
+
+\textbf{Test Execution:}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Call \texttt{newTokenSubscriptions(0xUSER789...)}.
+\item
+  A new token \texttt{XYZ} is created and listed.
+\item
+  The system detects and notifies the user.
+\end{enumerate}
+
+\textbf{Expected Output:}
+
+\begin{itemize}
+\tightlist
+\item
+  User receives a notification: \textbf{``New Token XYZ has been
+  listed!''}
+\end{itemize}
+
+\hypertarget{tc9-search-token-by-name}{%
+\subsubsection{\texorpdfstring{\textbf{TC9: Search Token by
+Name}}{TC9: Search Token by Name}}\label{tc9-search-token-by-name}}
+
+\textbf{Pre-condition:}
+
+\begin{itemize}
+\tightlist
+\item
+  The token \texttt{Solana} exists on the blockchain.
+\end{itemize}
+
+\textbf{Test Execution:}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Call \texttt{searchTokenByName("Solana")}.
+\item
+  The system searches for matching tokens.
+\end{enumerate}
+
+\textbf{Expected Output:}
+
+\begin{itemize}
+\tightlist
+\item
+  Returns details of the \texttt{Solana\ (SOL)} token.
+\end{itemize}
+
+\hypertarget{roadmap-features-future-enhancements-1}{%
+\subsection{\texorpdfstring{\textbf{2. Roadmap Features (Future
+Enhancements)}}{2. Roadmap Features (Future Enhancements)}}\label{roadmap-features-future-enhancements-1}}
+
+\hypertarget{tc10-multiple-ai-agent-integration}{%
+\subsubsection{\texorpdfstring{\textbf{TC10: Multiple AI Agent
+Integration}}{TC10: Multiple AI Agent Integration}}\label{tc10-multiple-ai-agent-integration}}
+
+\textbf{Pre-condition:}
+
+\begin{itemize}
+\tightlist
+\item
+  DeepSeek, Claude, and GPT models are available.
+\end{itemize}
+
+\textbf{Test Execution:}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Call an AI-based query using SWQuery's AI module.
+\item
+  The system selects the best AI model for the request.
+\end{enumerate}
+
+\textbf{Expected Output:}
+
+\begin{itemize}
+\tightlist
+\item
+  Returns the AI-generated response based on query intent.
+\end{itemize}
+
+\hypertarget{tc11-jupiter-integration-token-swaps}{%
+\subsubsection{\texorpdfstring{\textbf{TC11: Jupiter Integration (Token
+Swaps)}}{TC11: Jupiter Integration (Token Swaps)}}\label{tc11-jupiter-integration-token-swaps}}
+
+\textbf{Pre-condition:}
+
+\begin{itemize}
+\tightlist
+\item
+  User has \texttt{5\ SOL}.
+\item
+  Jupiter swap API is available.
+\end{itemize}
+
+\textbf{Test Execution:}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Call \texttt{swapToken("SOL",\ "USDC",\ 5)}.
+\item
+  The system interacts with Jupiter for execution.
+\end{enumerate}
+
+\textbf{Expected Output:}
+
+\begin{itemize}
+\tightlist
+\item
+  Transaction confirmation for \texttt{SOL\ →\ USDC} swap.
+\end{itemize}
+
+\hypertarget{tc12-magic-eden-integration-nft-trading}{%
+\subsubsection{\texorpdfstring{\textbf{TC12: Magic Eden Integration (NFT
+Trading)}}{TC12: Magic Eden Integration (NFT Trading)}}\label{tc12-magic-eden-integration-nft-trading}}
+
+\textbf{Pre-condition:}
+
+\begin{itemize}
+\tightlist
+\item
+  User owns an NFT.
+\item
+  Magic Eden API is available.
+\end{itemize}
+
+\textbf{Test Execution:}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Call \texttt{listNFT(nft\_id,\ price)}.
+\item
+  The system lists the NFT on Magic Eden.
+\end{enumerate}
+
+\textbf{Expected Output:}
+
+\begin{itemize}
+\tightlist
+\item
+  Confirmation: \textbf{``NFT listed successfully on Magic Eden.''}
+\end{itemize}
+
+\hypertarget{tc13-twitter-market-sentiment-analysis}{%
+\subsubsection{\texorpdfstring{\textbf{TC13: Twitter Market Sentiment
+Analysis}}{TC13: Twitter Market Sentiment Analysis}}\label{tc13-twitter-market-sentiment-analysis}}
+
+\textbf{Pre-condition:}
+
+\begin{itemize}
+\tightlist
+\item
+  Twitter API is accessible.
+\end{itemize}
+
+\textbf{Test Execution:}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Call \texttt{analyzeMarketSentiment("Solana")}.
+\item
+  The system scrapes and analyzes tweets.
+\end{enumerate}
+
+\textbf{Expected Output:}
+
+\begin{itemize}
+\tightlist
+\item
+  Returns sentiment score (\texttt{Positive}, \texttt{Neutral},
+  \texttt{Negative}).
+\end{itemize}
+
+\hypertarget{tc14-rug-check-api-integration}{%
+\subsubsection{\texorpdfstring{\textbf{TC14: Rug Check API
+Integration}}{TC14: Rug Check API Integration}}\label{tc14-rug-check-api-integration}}
+
+\textbf{Pre-condition:}
+
+\begin{itemize}
+\tightlist
+\item
+  A new token \texttt{XYZ} is being analyzed.
+\end{itemize}
+
+\textbf{Test Execution:}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Call \texttt{checkRugPullRisk("XYZ")}.
+\item
+  The system queries RugCheck API.
+\end{enumerate}
+
+\textbf{Expected Output:}
+
+\begin{itemize}
+\tightlist
+\item
+  Returns \textbf{risk level} (\texttt{Low}, \texttt{Medium},
+  \texttt{High}).
+\end{itemize}
+
+\hypertarget{tc15-social-media-project-analysis}{%
+\subsubsection{\texorpdfstring{\textbf{TC15: Social Media Project
+Analysis}}{TC15: Social Media Project Analysis}}\label{tc15-social-media-project-analysis}}
+
+\textbf{Pre-condition:}
+
+\begin{itemize}
+\tightlist
+\item
+  A token project has a social media profile.
+\end{itemize}
+
+\textbf{Test Execution:}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Call \texttt{analyzeSocialMedia("XYZ")}.
+\item
+  The system checks engagement, post frequency, and history.
+\end{enumerate}
+
+\textbf{Expected Output:}
+
+\begin{itemize}
+\tightlist
+\item
+  Returns a credibility score and flags suspicious activity.
+  Segundo \textcite{wang2022}, os algoritmos de consenso... \cite{griffain2025}
+\end{itemize}
+
+\section{Economic Impact}
+
+The convergence of decentralized finance (DeFi) and artificial intelligence (AI), often referred to as DefAI, represents a significant paradigm shift in the architecture and operation of blockchain-based financial systems. This synergy introduces intelligent, data-driven automation into domains traditionally governed by human discretion and opaque practices. Within this evolving landscape, SWQuery emerges as a critical infrastructural component, offering a comprehensive suite of tools for extracting, analyzing, and responding to blockchain data in real time. Its integration into the Solana ecosystem contributes not only to technological innovation but also to meaningful economic advancement.
+
+\subsection{Enhancing Market Transparency and Liquidity}
+
+A central economic challenge in decentralized markets is the prevalence of information asymmetry, wherein only technically adept users or entities with privileged data access can make informed decisions. SWQuery directly addresses this issue by democratizing access to key blockchain insights through its developer-friendly SDK. Functions such as \texttt{getTrendingTokens}, \texttt{searchTokenByName}, and \texttt{analyzeRugPullRisk} empower users to identify emergent opportunities and evaluate asset credibility with reduced technical overhead.
+
+This increased accessibility fosters broader participation in token markets, which, in turn, improves market liquidity and efficiency. Moreover, the integration of real-time WebSocket subscriptions for account and token activity allows applications to react dynamically to network events, facilitating the construction of predictive models, algorithmic trading strategies, and automated risk management frameworks. Such capabilities reduce latency in capital deployment and support a more fluid and responsive financial environment.
+
+\subsection{Stimulating Innovation through Composability}
+
+SWQuery also serves as a catalyst for innovation through its composable infrastructure. By abstracting the complexities of on-chain data interaction, it allows developers to build layered applications without duplicating data-fetching logic or indexing infrastructure. In this regard, SWQuery functions as a middleware primitive—enabling the rapid prototyping and deployment of intelligent decentralized applications (dApps), autonomous investment vehicles, and adaptive governance protocols.
+
+This modularity enhances innovation velocity and lowers entry barriers for new projects. As more applications integrate SWQuery's SDK, a recursive feedback loop is established: each additional integration not only validates the utility of SWQuery but also expands its influence as a foundational data layer within the DefAI ecosystem. This recursive composability is a hallmark of economically robust decentralized platforms.
+
+\subsection{Promoting Security and Stability}
+
+In addition to economic expansion, SWQuery contributes to systemic risk mitigation. The \texttt{analyzeRugPullRisk} functionality exemplifies the practical fusion of AI heuristics with blockchain transparency to identify potentially fraudulent or high-risk assets. By offering developers and users a standardized tool for assessing token legitimacy, SWQuery enhances the integrity of market interactions and fosters safer investment environments.
+
+Such preventative capabilities are essential for the long-term stability of decentralized economies, as they reduce susceptibility to manipulative schemes and speculative bubbles. Increased user confidence translates into higher levels of sustainable participation, reinforcing the economic base of the broader ecosystem.
+
+\subsection{Strategic Role in the DefAI Economy}
+
+From a macroeconomic perspective, SWQuery aligns with the long-term objectives of the DefAI movement: to build intelligent, decentralized, and equitable financial systems. As DeFi protocols scale to manage increasingly complex portfolios and governance structures, the role of data-driven insight becomes critical. SWQuery's provision of accurate, real-time, and composable data feeds positions it as a core infrastructural component for future financial autonomy.
+
+In summary, SWQuery’s contribution to the DefAI ecosystem transcends technical utility. It supports economic democratization, stimulates innovation, promotes security, and enhances systemic resilience. By enabling developers and users to navigate and interact with blockchain data more effectively, SWQuery lays the groundwork for a more transparent, efficient, and inclusive decentralized economy.
+
+\section{Conclusion}
+
+The emergence of SWQuery within the DefAI ecosystem marks a pivotal advancement in how developers and users interface with blockchain data. As decentralized finance continues to evolve in complexity and scale, the demand for intelligent, composable, and reliable data infrastructure has never been more critical. This whitepaper has detailed SWQuery’s functional architecture, technical benchmarks, and its operational dynamics through sequence diagrams and architectural decisions, while also situating the project within a broader market context.
+
+By providing an SDK that abstracts the intricacies of interacting with the Solana blockchain, SWQuery significantly reduces the barrier to entry for decentralized application development. Its modular functions---ranging from asset querying and token analytics to real-time WebSocket subscriptions---equip developers with the tools needed to build adaptive and data-driven financial protocols. Moreover, the system’s integration with AI-powered modules such as rug pull risk analysis demonstrates a forward-looking commitment to enhancing both usability and security in DeFi environments.
+
+SWQuery’s value proposition is further reinforced through its economic impact, enabling greater market transparency, fostering composability, and supporting the development of secure and sustainable financial ecosystems. It not only empowers the current wave of developers but also lays the foundation for future innovation within DefAI.
+
+In closing, SWQuery positions itself as more than a utility—it is an enabling framework for a decentralized, intelligent financial future. As adoption grows and integration deepens, SWQuery is poised to become a cornerstone of the DefAI movement, catalyzing the next generation of on-chain intelligence and decentralized finance applications.
+
+\printbibliography
+
+\end{document}
