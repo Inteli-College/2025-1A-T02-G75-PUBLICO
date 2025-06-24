@@ -37,6 +37,10 @@ Design, implement, and integrate the Rug Pull Risk Analysis feature into the SWQ
 - Integrated the analysis engine with the SDK, enabling seamless access for client applications.
 - Established automated tests to validate risk assessment logic and ensure reliability.
 
+<p align="center">
+    <img src="../../assets/rugrisktest.png" alt="Rug Pull Risk Analysis Test" />
+</p>
+
 **Outcome:**  
 The Rug Pull Risk Analysis feature was successfully developed, tested, and integrated, providing users with actionable risk insights for any Solana token. The feature is now available for user testing and feedback.
 
@@ -50,6 +54,13 @@ Initiate development of the Social Media Analysis feature, focusing on sentiment
 **Challenges:**
 - Discovered that access to Twitter's API required a paid tier with prohibitively high costs, exceeding the project's current budget.
 - Explored alternative APIs and data providers, but none met the requirements for real-time, comprehensive data access.
+
+<p align="center">
+    <img src="../../assets/costs.png" alt="API Costs" />
+</p>
+<p align="center">
+    <img src="../../assets/image.png" alt="API Access Table" />
+</p>
 
 **Actions Taken:**
 - Documented the technical and financial constraints in detail.
