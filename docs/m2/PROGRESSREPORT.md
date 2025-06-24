@@ -38,7 +38,7 @@ Design, implement, and integrate the Rug Pull Risk Analysis feature into the SWQ
 - Established automated tests to validate risk assessment logic and ensure reliability.
 
 <p align="center">
-    <img src="../../assets/rugrisktest.png" alt="Rug Pull Risk Analysis Test" />
+    <img src="../../assets/features/rugrisktest.png" alt="Rug Pull Risk Analysis Test" />
 </p>
 
 **Outcome:**  
@@ -56,10 +56,10 @@ Initiate development of the Social Media Analysis feature, focusing on sentiment
 - Explored alternative APIs and data providers, but none met the requirements for real-time, comprehensive data access.
 
 <p align="center">
-    <img src="../../assets/costs.png" alt="API Costs" />
+    <img src="../../assets/features/costs.png" alt="API Costs" />
 </p>
 <p align="center">
-    <img src="../../assets/image.png" alt="API Access Table" />
+    <img src="../../assets/features/image.png" alt="API Access Table" />
 </p>
 
 **Actions Taken:**
