@@ -1,4 +1,4 @@
-## Milestone M3 – Public Report: Jupiter Integration (Token Swaps)
+## Public Report: Jupiter Integration (Token Swaps)
 
 This report consolidates all work delivered in Milestone M3 for TC11: Jupiter Integration. It compiles the development plan, architecture, sprint progress, and the complete swap test simulation suite for the Abstraction Layer feature.
 
