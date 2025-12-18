@@ -386,150 +386,24 @@ Feedback collected during the validation phase indicated:
 
 ## Business Model & Revenue Strategy
 
-### Business Model Canvas Summary
+SWQuery operates on a freemium subscription model targeting developers, analytics platforms, and Web3 infrastructure teams within the Solana ecosystem. The platform offers natural language query interfaces, AI-powered risk analysis, and seamless DeFi integrations through a developer-first, product-led growth approach.
 
-**Value Propositions:**
-- Abstracting complex on-chain data access into natural language queries with structured, developer-ready outputs
-- Removing need for deep blockchain-specific knowledge
-- Reducing technical complexity, development time, and operational friction
+**Key Highlights:**
+- **Pricing Tiers:** Free (3 queries/day), Starter ($10/month), Basic ($30/month), Pro ($50/month)
+- **Year 1 Projections:** ~90 paid users generating $2,160 MRR and $25,920 ARR
+- **Break-Even:** Projected by end of Year 1 with monthly costs of ~$1,100
+- **Unit Economics:** LTV:CAC ratio of 4.8:1 demonstrating sustainable growth
+- **Strategic Partnerships:** Helius, Jupiter, Orca, Solana Foundation, RugCheck
 
-**Customer Segments:**
-- Solana-focused developers
-- Analytics and research platforms
-- Compliance and monitoring tools
-- Blockchain infrastructure services
-- Predominantly technical professionals and organizations seeking productivity gains
-
-**Channels:**
-- Direct SDK adoption
-- Online documentation
-- Ecosystem-driven discovery through developer communities
-- Hackathons, technical forums, blockchain-focused events
-
-**Customer Relationships:**
-- Product-led and self-service approach
-- Onboarding, usage guidance, and troubleshooting through documentation and community support
-
-**Revenue Streams:**
-- **Freemium Model:** 3 free queries per day for onboarding and initial adoption
-- **Starter:** $10 USDC/month for individual developers and light usage
-- **Basic:** $30 USDC/month for moderate usage and small teams
-- **Pro:** $50 USDC/month for heavy usage and organizational integrations
-- Paid tiers based on query volume and usage intensity
-
-**Key Resources:**
-- Software codebase
-- Cloud infrastructure
-- Access to reliable RPC services (Helius)
-- Specialized technical expertise in blockchain systems and data engineering
-
-**Key Activities:**
-- Continuous SDK development and maintenance
-- Query interpretation and optimization
-- Integration with Solana RPC and infrastructure providers
-- Iterative improvement of data abstraction layers
-
-**Key Partnerships:**
-- Blockchain infrastructure and RPC providers (Helius) ensuring data availability, performance, and scalability
-- Jupiter for swap aggregation
-- Orca as fallback DEX
-- Solana Foundation for ecosystem support
-
-**Cost Structure:**
-- Infrastructure consumption (RPC credits, cloud services): ~$200/month
-- API and RPC usage
-- Ongoing development and maintenance: ~$500/month
-- Operational costs for system reliability and performance: ~$100/month
-- Marketing and acquisition: ~$300/month
-- **Total estimated monthly costs:** ~$1,100
-
-### Marketing and Sales Strategy
-
-**Go-to-Market Approach:**
-- Developer-first and product-led growth
-- Initial launch to Solana developer ecosystem through open-source communities, hackathons, technical forums, and blockchain-focused events
-- Early exposure driven by direct engagement with developers experiencing complex on-chain data access challenges
-
-**Customer Acquisition:**
-- Organic channels: technical content, documentation, sample implementations, real-world use case demonstrations
-- Free usage tier to encourage experimentation and early validation among developers and small teams
-
-**Retention Strategies:**
-- Consistent value delivery through reliable performance
-- Clear productivity gains
-- Continuous introduction of new features aligned with user needs
-- Subscription-based plans incentivizing long-term usage with higher query limits and advanced functionalities
-- Updates and improvements reinforcing user trust and engagement
-
-### Competitive Advantages
-- Open-source transparency vs. closed-source competitors
-- Clear, fair pricing vs. hidden fees and non-refundable payments
-- Cost-optimized operations (90% reduction in social intelligence costs)
-- Superior developer experience with comprehensive documentation
-- Growing community and ecosystem partnerships
-- Developer-centric design with natural language query interface
-- Standardized structured outputs streamlining integration
-
----
-
-## Financial Projections
-
-### Revenue Model and Pricing Structure
-- **Free Tier:** 3 free queries per day for onboarding and initial adoption
-- **Starter:** $10 USDC per month for individual developers and light usage
-- **Basic:** $30 USDC per month for moderate usage and small teams
-- **Pro:** $50 USDC per month for heavy usage and organizational integrations
-
-### Year 1 Financial Projections
-Based on conservative 3% freemium → paid conversion (industry benchmark: 2-5% for SaaS) and initial user base of 3,000 developers:
-
-- **Total paid users:** ~90 users (3% of 3,000)
-- **Starter (50%):** 45 users × $10 = $450/month
-- **Basic (30%):** 27 users × $30 = $810/month
-- **Pro (20%):** 18 users × $50 = $900/month
-- **Total MRR:** ~$2,160/month
-- **Total ARR:** ~$25,920/year
-
-### Projected Expenses (Monthly)
-- Infrastructure & API usage: $200 (RPC credits, cloud services)
-- Development & maintenance: $500 (team hours and tooling)
-- Marketing & acquisition: $300 (content, community, sponsorships)
-- Operational overhead: $100
-- **Total estimated monthly costs:** ~$1,100
-
-### Break-Even Analysis
-- With MRR of ~$2,160 and monthly costs of ~$1,100, SWQuery projected to reach operational break-even by end of Year 1
-- Break-even within 12-18 months feasible for product-led tools with strong developer adoption
-
-### Return on Investment (ROI)
-- Initial development and launch costs: $10,000 (product development, tooling, initial community programs)
-- ROI timeframe: ~18-24 months as revenue scales while fixed costs are amortized
-
-### Key Performance Indicators (KPIs)
-- **Monthly Recurring Revenue (MRR):** ~$2,160 in Year 1
-- **Annual Recurring Revenue (ARR):** ~$25,920
-- **Average Revenue Per User (ARPU):** ~$24/month per paid user (weighted average: (45×$10 + 27×$30 + 18×$50) ÷ 90)
-- **Customer Acquisition Cost (CAC):** ~$120 per customer (industry benchmark for developer SaaS tools)
-- **Customer Lifetime Value (LTV):** ~$576 per customer (assuming 5% annual churn, ARPU $24/month: (24 × 12) × (1 / 0.05))
-- **LTV:CAC Ratio:** ~4.8:1 (healthy ratio, indicating sustainable unit economics)
-- **Churn Rate:** Estimated ~5% per month initially, decreasing over time as product-market fit improves
-- **Net Revenue Retention (NRR):** Expected >100% with upsells and plan upgrades (Starter → Basic/Pro)
+*For comprehensive business model details, market analysis, financial projections, and go-to-market strategy, see [BUSINESSMODEL.md](./BUSINESSMODEL.md).*
 
 ---
 
 ## Strategic Partnerships
 
-### Current Partnerships
-- **Superteam Brazil:** Ecosystem alignment and grant preparation
-- **Helius:** RPC infrastructure provider
-- **Jupiter:** Token swap aggregation
-- **RugCheck:** Risk assessment API
+SWQuery has established strategic partnerships with key ecosystem players: **Helius** (RPC infrastructure), **Jupiter** (token swap aggregation), **Orca** (fallback DEX), **RugCheck** (risk assessment), and **Solana Foundation** (ecosystem support). These partnerships ensure reliable data availability, performance, and scalability while enabling rapid growth without proprietary infrastructure overhead.
 
-### Potential Partnerships
-- **Orca:** Fallback DEX for swaps
-- **Solana Foundation:** Grants and ecosystem support
-- **Magic Eden:** NFT operations (future)
-- **Additional AI Providers:** Claude, DeepSeek integration
+*For detailed partnership strategy and business model canvas, check [BUSINESSMODEL.md](./BUSINESSMODEL.md).*
 
 ---
 

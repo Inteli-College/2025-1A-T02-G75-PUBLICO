@@ -489,8 +489,3 @@ SWQuery's business model is designed for sustainable growth within the rapidly e
 The open-source, transparent approach differentiates SWQuery from closed-source competitors, while strategic partnerships and ecosystem integration provide scalability and reliability. Market validation confirms strong interest and value recognition, supporting the business model's viability.
 
 As the Solana ecosystem continues to grow and demand for simplified blockchain data access increases, SWQuery is well-positioned to capture market share and establish itself as a leading platform for on-chain data accessibility in the DefAI space.
-
----
-
-*This business model document is based on comprehensive market analysis, competitive research, financial modeling, and market validation conducted throughout the SWQuery project development lifecycle.*
-
